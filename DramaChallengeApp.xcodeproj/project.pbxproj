@@ -15,6 +15,9 @@
 		4C9E81EE1F31B0D100263DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E81EC1F31B0D100263DDA /* LaunchScreen.storyboard */; };
 		4C9E81F91F31B0D100263DDA /* DramaChallengeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81F81F31B0D100263DDA /* DramaChallengeAppTests.swift */; };
 		4C9E82041F31B0D200263DDA /* DramaChallengeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E82031F31B0D200263DDA /* DramaChallengeAppUITests.swift */; };
+		58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */; };
+		5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */; };
+		CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramaChallengeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramaChallengeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		374A67EF9D443C584961E900 /* Pods-DramaChallengeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		393B295B2367180D877304BC /* Pods-DramaChallengeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C6083BC2261ACD4DDE51A14 /* Pods-DramaChallengeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C9E81DD1F31B0D100263DDA /* DramaChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DramaChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9E81E01F31B0D100263DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9E81E21F31B0D100263DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		4C9E81FF1F31B0D100263DDA /* DramaChallengeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DramaChallengeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9E82031F31B0D200263DDA /* DramaChallengeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaChallengeAppUITests.swift; sourceTree = "<group>"; };
 		4C9E82051F31B0D200263DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
+		AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramaChallengeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				4C9E81F71F31B0D100263DDA /* DramaChallengeAppTests */,
 				4C9E82021F31B0D100263DDA /* DramaChallengeAppUITests */,
 				4C9E81DE1F31B0D100263DDA /* Products */,
+				AA7957DD9E4BCA90D2220ADC /* Pods */,
+				E463B41CC11DB2B1D2C9F076 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = DramaChallengeAppUITests;
 			sourceTree = "<group>";
 		};
+		AA7957DD9E4BCA90D2220ADC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */,
+				A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */,
+				374A67EF9D443C584961E900 /* Pods-DramaChallengeAppTests.debug.xcconfig */,
+				4C6083BC2261ACD4DDE51A14 /* Pods-DramaChallengeAppTests.release.xcconfig */,
+				393B295B2367180D877304BC /* Pods-DramaChallengeAppUITests.debug.xcconfig */,
+				7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E463B41CC11DB2B1D2C9F076 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */,
+				EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */,
+				30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C9E82081F31B0D200263DDA /* Build configuration list for PBXNativeTarget "DramaChallengeApp" */;
 			buildPhases = (
+				831FF22052DE2BABE28259F6 /* [CP] Check Pods Manifest.lock */,
 				4C9E81D91F31B0D100263DDA /* Sources */,
 				4C9E81DA1F31B0D100263DDA /* Frameworks */,
 				4C9E81DB1F31B0D100263DDA /* Resources */,
+				6C97E361E82DAE6DC9F42FD2 /* [CP] Embed Pods Frameworks */,
+				EA0EE03E08A4B3A003ABBB3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C9E820B1F31B0D200263DDA /* Build configuration list for PBXNativeTarget "DramaChallengeAppTests" */;
 			buildPhases = (
+				C85F40D83EB7433370E2DE55 /* [CP] Check Pods Manifest.lock */,
 				4C9E81F01F31B0D100263DDA /* Sources */,
 				4C9E81F11F31B0D100263DDA /* Frameworks */,
 				4C9E81F21F31B0D100263DDA /* Resources */,
+				47DE3585EE10592589F44B6A /* [CP] Embed Pods Frameworks */,
+				FC1A7550538A8DFA25C3E7E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C9E820E1F31B0D200263DDA /* Build configuration list for PBXNativeTarget "DramaChallengeAppUITests" */;
 			buildPhases = (
+				18602EDC5EEA44DCFFAE71E9 /* [CP] Check Pods Manifest.lock */,
 				4C9E81FB1F31B0D100263DDA /* Sources */,
 				4C9E81FC1F31B0D100263DDA /* Frameworks */,
 				4C9E81FD1F31B0D100263DDA /* Resources */,
+				2AADD56ABDAAADEFF986F96D /* [CP] Embed Pods Frameworks */,
+				566E8163CEC73F3529AB1222 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +308,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18602EDC5EEA44DCFFAE71E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AADD56ABDAAADEFF986F96D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47DE3585EE10592589F44B6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		566E8163CEC73F3529AB1222 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C97E361E82DAE6DC9F42FD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831FF22052DE2BABE28259F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C85F40D83EB7433370E2DE55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0EE03E08A4B3A003ABBB3F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC1A7550538A8DFA25C3E7E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C9E81D91F31B0D100263DDA /* Sources */ = {
@@ -417,6 +604,7 @@
 		};
 		4C9E82091F31B0D200263DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYNM954255;
@@ -430,6 +618,7 @@
 		};
 		4C9E820A1F31B0D200263DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYNM954255;
@@ -443,6 +632,7 @@
 		};
 		4C9E820C1F31B0D200263DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 374A67EF9D443C584961E900 /* Pods-DramaChallengeAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +648,7 @@
 		};
 		4C9E820D1F31B0D200263DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C6083BC2261ACD4DDE51A14 /* Pods-DramaChallengeAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +664,7 @@
 		};
 		4C9E820F1F31B0D200263DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393B295B2367180D877304BC /* Pods-DramaChallengeAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XYNM954255;
@@ -487,6 +679,7 @@
 		};
 		4C9E82101F31B0D200263DDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XYNM954255;
