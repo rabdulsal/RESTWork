@@ -28,6 +28,7 @@ class AlbumEntity {
     var userId: Int
     var id: Int
     var title: String
+    var photos: [PhotoEntity]?=nil
     
     init(albumDict: [String:Any]) {
         id = albumDict["id"] as? Int ?? -1
@@ -41,6 +42,7 @@ class PostEntity {
     var id: Int
     var title: String
     var body: String
+    var comments: [CommentEntity]?=nil
     
     init(postDict: [String:Any]) {
         userId = postDict["userId"] as? Int ?? -1

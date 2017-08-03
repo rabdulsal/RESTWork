@@ -1,50 +1,48 @@
 //
-//  FriendsViewController.swift
+//  UserService.swift
 //  DramaChallengeApp
 //
-//  Created by Rashad Abdul-Salaam on 8/2/17.
+//  Created by Rashad Abdul-Salaam on 8/3/17.
 //  Copyright © 2017 Rashad, Inc. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 
-class FriendsViewController: UIViewController {
-
-    
-    @IBOutlet weak var friendsTableView: UITableView!
+class UserService {
     
     var users = [UserEntity]()
     var albums = [AlbumEntity]()
     var photos = [PhotoEntity]()
     var posts = [PostEntity]()
     var comments = [CommentEntity]()
+    var dataUpdatedCallback: (()->Void)?
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        friendsTableView.delegate = self
-        friendsTableView.dataSource = self
-        loadAllData()
+    func loadAllData() {
+        self.getUsersRequest { (users) in
+            self.users = users
+            self.getAlbumsRequest(completion: { (albums) in
+                self.albums = albums
+                self.getPhotosRequest(completion: { (photos) in
+                    self.photos = photos
+                    self.getPostsRequest(completion: { (posts) in
+                        self.posts = posts
+                        self.getCommentsRequest(completion: { (comments) in
+                            self.comments = comments
+                            
+                            self.mergeAllData()
+                        })
+                    })
+                })
+            })
+        }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+fileprivate extension UserService {
     // Posts
     func getPostsRequest(completion: ((_ albums: [PostEntity])->Void)?) {
         Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             var posts = [PostEntity]()
             if let json = response.result.value as? [[String:Any]] {
@@ -67,9 +65,6 @@ class FriendsViewController: UIViewController {
     // Comments
     func getCommentsRequest(completion: ((_ comments: [CommentEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             var comments = [CommentEntity]()
             if let json = response.result.value as? [[String:Any]] {
@@ -92,9 +87,6 @@ class FriendsViewController: UIViewController {
     // Users
     func getUsersRequest(completion: ((_ albums: [UserEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/users").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             var users = [UserEntity]()
             if let json = response.result.value as? [[String:Any]] {
@@ -117,9 +109,6 @@ class FriendsViewController: UIViewController {
     // Albums
     func getAlbumsRequest(completion: ((_ albums: [AlbumEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/albums").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             var albums = [AlbumEntity]()
             if let json = response.result.value as? [[String:Any]] {
@@ -142,9 +131,6 @@ class FriendsViewController: UIViewController {
     //Photos
     func getPhotosRequest(completion: ((_ photos: [PhotoEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/photos").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             var photos = [PhotoEntity]()
             if let json = response.result.value as? [[String:Any]] {
@@ -164,49 +150,36 @@ class FriendsViewController: UIViewController {
         }
     }
     
-    func loadAllData() {
-        self.getUsersRequest { (users) in
-            self.users = users
-            self.getAlbumsRequest(completion: { (albums) in
-                self.albums = albums
-                self.getPhotosRequest(completion: { (photos) in
-                    self.photos = photos
-                    self.getPostsRequest(completion: { (posts) in
-                        self.posts = posts
-                        self.getCommentsRequest(completion: { (comments) in
-                            self.comments = comments
-                            
-                            print("Users count:", self.users.count)
-                            print("Albums count:", self.albums.count)
-                            print("Photos count:", self.photos.count)
-                            print("Posts count:", self.posts.count)
-                            print("Comments count:", self.comments.count)
-                            self.friendsTableView.reloadData()
-                        })
-                    })
-                })
-            })
+    func mergeAllData() {
+        
+        // Merge comments -> posts
+        for post in self.posts {
+            post.comments = comments.filter { $0.postId == post.id }
+        }
+        
+        // Merge posts -> users
+        for user in self.users {
+            user.posts = self.posts.filter { $0.userId == user.id }
+        }
+        
+        // Merge photos -> albums
+        for album in self.albums {
+            album.photos = self.photos.filter { $0.albumId == album.id }
+        }
+        
+        // Merge albums -> users
+        for user in self.users {
+            user.albums = self.albums.filter { $0.userId == user.id }
+        }
+        
+        for user in self.users {
+            if let albums = user.albums, let posts = user.posts {
+                print("User \(user.name) Albums: \(albums.count) Posts: \(posts.count)")
+            }
+        }
+        
+        if let callback = dataUpdatedCallback {
+            callback()
         }
     }
 }
-
-extension FriendsViewController : UITableViewDelegate {
-    
-}
-
-extension FriendsViewController : UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCellID") as! FriendTableViewCell
-        let friend = self.users[indexPath.row]
-        
-        cell.configureContactCell(friend: friend)
-        return cell
-    }
-}
-

@@ -18,6 +18,9 @@ class UserEntity {
     var website: String
     //    var geo: Geotag
     var company: CompanyEntity
+    var albums: [AlbumEntity]?=nil
+    var posts: [PostEntity]?=nil
+    var photos: [PhotoEntity]?=nil
     
     init(userJSON: [String : Any]) {
         self.id = userJSON["id"] as? Int ?? -1
