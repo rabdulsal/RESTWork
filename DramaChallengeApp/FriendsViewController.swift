@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FriendsViewController.swift
 //  DramaChallengeApp
 //
 //  Created by Rashad Abdul-Salaam on 8/2/17.
@@ -9,8 +9,11 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class FriendsViewController: UIViewController {
 
+    
+    @IBOutlet weak var friendsTableView: UITableView!
+    
     var users = [UserEntity]()
     var albums = [AlbumEntity]()
     var photos = [PhotoEntity]()
@@ -20,6 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        friendsTableView.delegate = self
+        friendsTableView.dataSource = self
         loadAllData()
     }
     
@@ -176,11 +181,32 @@ class ViewController: UIViewController {
                             print("Photos count:", self.photos.count)
                             print("Posts count:", self.posts.count)
                             print("Comments count:", self.comments.count)
+                            self.friendsTableView.reloadData()
                         })
                     })
                 })
             })
         }
+    }
+}
+
+extension FriendsViewController : UITableViewDelegate {
+    
+}
+
+extension FriendsViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCellID") as! FriendTableViewCell
+        let friend = self.users[indexPath.row]
+        
+        cell.configureContactCell(friend: friend)
+        return cell
     }
 }
 

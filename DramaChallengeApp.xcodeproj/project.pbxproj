@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E01F31B0D100263DDA /* AppDelegate.swift */; };
-		4C9E81E31F31B0D100263DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E21F31B0D100263DDA /* ViewController.swift */; };
+		4C9E81E31F31B0D100263DDA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E21F31B0D100263DDA /* FriendsViewController.swift */; };
 		4C9E81E61F31B0D100263DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E81E41F31B0D100263DDA /* Main.storyboard */; };
 		4C9E81E91F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E71F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld */; };
 		4C9E81EB1F31B0D100263DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E81EA1F31B0D100263DDA /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		4CAF91EE1F32A40E00F2556C /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF91ED1F32A40E00F2556C /* NetworkRequestService.swift */; };
 		4CAF91F01F32D93000F2556C /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF91EF1F32D93000F2556C /* UserEntity.swift */; };
 		4CAF91F21F32D97400F2556C /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF91F11F32D97400F2556C /* PhotoEntity.swift */; };
+		4CAF91F51F33680D00F2556C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */; };
 		58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */; };
 		5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */; };
 		CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */; };
@@ -48,7 +49,7 @@
 		4C6083BC2261ACD4DDE51A14 /* Pods-DramaChallengeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C9E81DD1F31B0D100263DDA /* DramaChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DramaChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9E81E01F31B0D100263DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C9E81E21F31B0D100263DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C9E81E21F31B0D100263DDA /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		4C9E81E51F31B0D100263DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C9E81E81F31B0D100263DDA /* DramaChallengeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DramaChallengeApp.xcdatamodel; sourceTree = "<group>"; };
 		4C9E81EA1F31B0D100263DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		4CAF91ED1F32A40E00F2556C /* NetworkRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestService.swift; sourceTree = "<group>"; };
 		4CAF91EF1F32D93000F2556C /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		4CAF91F11F32D97400F2556C /* PhotoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
+		4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
 		AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,9 +124,10 @@
 		4C9E81DF1F31B0D100263DDA /* DramaChallengeApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF91F31F3367E100F2556C /* Views */,
 				4CAF91EC1F32A22000F2556C /* Models */,
 				4C9E81E01F31B0D100263DDA /* AppDelegate.swift */,
-				4C9E81E21F31B0D100263DDA /* ViewController.swift */,
+				4C9E81E21F31B0D100263DDA /* FriendsViewController.swift */,
 				4C9E81E41F31B0D100263DDA /* Main.storyboard */,
 				4C9E81EA1F31B0D100263DDA /* Assets.xcassets */,
 				4C9E81EC1F31B0D100263DDA /* LaunchScreen.storyboard */,
@@ -160,6 +163,14 @@
 				4CAF91F11F32D97400F2556C /* PhotoEntity.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4CAF91F31F3367E100F2556C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		AA7957DD9E4BCA90D2220ADC /* Pods */ = {
@@ -469,12 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9E81E31F31B0D100263DDA /* ViewController.swift in Sources */,
+				4C9E81E31F31B0D100263DDA /* FriendsViewController.swift in Sources */,
 				4C9E81E91F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld in Sources */,
 				4CAF91EE1F32A40E00F2556C /* NetworkRequestService.swift in Sources */,
 				4CAF91F01F32D93000F2556C /* UserEntity.swift in Sources */,
 				4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */,
 				4CAF91F21F32D97400F2556C /* PhotoEntity.swift in Sources */,
+				4CAF91F51F33680D00F2556C /* FriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
