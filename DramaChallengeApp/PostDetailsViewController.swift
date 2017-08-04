@@ -41,7 +41,7 @@ class PostDetailsViewController : UIViewController {
         super.viewDidLoad()
         
         postTitleLabel.text = post.title
-//        postAuthorLabel.text = post.author.name
+        postAuthorLabel.text = post.author.name
     }
 }
 

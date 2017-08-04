@@ -45,7 +45,7 @@ class PostEntity {
     var comments: [CommentEntity]?=nil
     var userService = UserService()
     var author: UserEntity {
-        return userService.users.filter { $0.id == self.userId }.first!
+        return UserService.users.filter { $0.id == self.userId }.first!
     }
     
     init(postDict: [String:Any]) {

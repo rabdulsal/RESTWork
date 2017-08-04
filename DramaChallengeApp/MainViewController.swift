@@ -1,5 +1,5 @@
 //
-//  FriendsViewController.swift
+//  MainViewController.swift
 //  DramaChallengeApp
 //
 //  Created by Rashad Abdul-Salaam on 8/2/17.
@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FriendsViewController: UIViewController {
+class MainViewController: UIViewController {
     
     enum MainPageSections : Int {
         case friends = 0
@@ -38,17 +38,14 @@ class FriendsViewController: UIViewController {
         }
     }
     
-    var userService = UserService()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         friendsTableView.delegate = self
         friendsTableView.dataSource = self
-        userService.dataUpdatedCallback = {
+        UserService.dataUpdatedCallback = {
             self.reloadView()
         }
-        userService.loadAllData()
+        UserService.loadAllData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +64,7 @@ class FriendsViewController: UIViewController {
     }
 }
 
-extension FriendsViewController : UITableViewDelegate {
+extension MainViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = MainPageSections.init(rawValue: indexPath.section) else { return }
@@ -76,13 +73,13 @@ extension FriendsViewController : UITableViewDelegate {
         case .friends: return
         case .topPosts:
             
-            let post = userService.top3FriendPosts[indexPath.row]
+            let post = UserService.top3FriendPosts[indexPath.row]
             self.pushToPostDetailView(post: post)
         }
     }
 }
 
-extension FriendsViewController : UITableViewDataSource {
+extension MainViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return MainPageSections.count
@@ -93,7 +90,7 @@ extension FriendsViewController : UITableViewDataSource {
         
         switch section {
         case .friends: return 1
-        case .topPosts: return userService.top3FriendPosts.count
+        case .topPosts: return UserService.top3FriendPosts.count
         }
     }
     
@@ -107,7 +104,7 @@ extension FriendsViewController : UITableViewDataSource {
             return UITableViewCell()
         case .topPosts:
             let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell // TODO: Make abbreviated post cell
-            let post = self.userService.top3FriendPosts[indexPath.row]
+            let post = UserService.top3FriendPosts[indexPath.row]
             
             cell.configureView(with: post, and: self)
             return cell
@@ -124,14 +121,14 @@ extension FriendsViewController : UITableViewDataSource {
     }
 }
 
-extension FriendsViewController : AbbreviatedPostViewDelegate {
+extension MainViewController : AbbreviatedPostViewDelegate {
     func didPressMoreButton() {
         // Push to PostDetailVC
         print("Pressed More Button")
     }
 }
 
-fileprivate extension FriendsViewController {
+fileprivate extension MainViewController {
     
     func pushToPostDetailView(post: PostEntity) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

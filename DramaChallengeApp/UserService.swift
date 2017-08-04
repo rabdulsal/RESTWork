@@ -11,12 +11,12 @@ import Alamofire
 
 class UserService {
     
-    var users = [UserEntity]()
-    var albums = [AlbumEntity]()
-    var photos = [PhotoEntity]()
-    var posts = [PostEntity]()
-    var comments = [CommentEntity]()
-    var top3FriendPosts: [PostEntity] {
+    static var users = [UserEntity]()
+    static var albums = [AlbumEntity]()
+    static var photos = [PhotoEntity]()
+    static var posts = [PostEntity]()
+    static var comments = [CommentEntity]()
+    static var top3FriendPosts: [PostEntity] {
         var topPosts = [PostEntity]()
         for (idx, user) in self.users.enumerated() {
             if idx == 3 { break }
@@ -26,9 +26,9 @@ class UserService {
         }
         return topPosts
     }
-    var dataUpdatedCallback: (()->Void)?
+    static var dataUpdatedCallback: (()->Void)?
     
-    func loadAllData() {
+    static func loadAllData() {
         self.getUsersRequest { (users) in
             self.users = users
             self.getAlbumsRequest(completion: { (albums) in
@@ -51,7 +51,7 @@ class UserService {
 
 fileprivate extension UserService {
     // Posts
-    func getPostsRequest(completion: ((_ albums: [PostEntity])->Void)?) {
+    static func getPostsRequest(completion: ((_ albums: [PostEntity])->Void)?) {
         Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
             
             var posts = [PostEntity]()
@@ -62,10 +62,6 @@ fileprivate extension UserService {
                 }
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-            
             if let cmpltn = completion {
                 cmpltn(posts)
             }
@@ -73,7 +69,7 @@ fileprivate extension UserService {
     }
     
     // Comments
-    func getCommentsRequest(completion: ((_ comments: [CommentEntity])->Void)?=nil) {
+    static func getCommentsRequest(completion: ((_ comments: [CommentEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
             
             var comments = [CommentEntity]()
@@ -84,10 +80,6 @@ fileprivate extension UserService {
                 }
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-            
             if let cmpltn = completion {
                 cmpltn(comments)
             }
@@ -95,7 +87,7 @@ fileprivate extension UserService {
     }
     
     // Users
-    func getUsersRequest(completion: ((_ albums: [UserEntity])->Void)?=nil) {
+    static func getUsersRequest(completion: ((_ albums: [UserEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/users").responseJSON { response in
             
             var users = [UserEntity]()
@@ -106,10 +98,6 @@ fileprivate extension UserService {
                     users.append(user)
                 }
             }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
             if let cmpltn = completion {
                 cmpltn(users)
             }
@@ -117,7 +105,7 @@ fileprivate extension UserService {
     }
     
     // Albums
-    func getAlbumsRequest(completion: ((_ albums: [AlbumEntity])->Void)?=nil) {
+    static func getAlbumsRequest(completion: ((_ albums: [AlbumEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/albums").responseJSON { response in
             
             var albums = [AlbumEntity]()
@@ -128,10 +116,6 @@ fileprivate extension UserService {
                 }
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-            
             if let cmpltn = completion {
                 cmpltn(albums)
             }
@@ -139,7 +123,7 @@ fileprivate extension UserService {
     }
     
     //Photos
-    func getPhotosRequest(completion: ((_ photos: [PhotoEntity])->Void)?=nil) {
+    static func getPhotosRequest(completion: ((_ photos: [PhotoEntity])->Void)?=nil) {
         Alamofire.request("https://jsonplaceholder.typicode.com/photos").responseJSON { response in
             
             var photos = [PhotoEntity]()
@@ -150,17 +134,13 @@ fileprivate extension UserService {
                 }
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-            
             if let cmpltn = completion {
                 cmpltn(photos)
             }
         }
     }
     
-    func mergeAllData() {
+    static func mergeAllData() {
         
         // Merge comments -> posts
         for post in self.posts {
