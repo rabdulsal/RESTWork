@@ -94,6 +94,15 @@ extension FriendDashboardViewController : UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = DashboardSections(rawValue: section) else { return nil }
+        
+        switch section {
+        case .topPosts: return "\(self.friend.name)'s Top Posts"
+        case .topPhotos: return "\(self.friend.name)'s Top Photos"
+        }
+    }
 }
 
 extension FriendDashboardViewController : AbbreviatedPostViewDelegate {
