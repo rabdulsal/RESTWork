@@ -43,6 +43,10 @@ class PostEntity {
     var title: String
     var body: String
     var comments: [CommentEntity]?=nil
+    var userService = UserService()
+    var author: UserEntity {
+        return userService.users.filter { $0.id == self.userId }.first!
+    }
     
     init(postDict: [String:Any]) {
         userId = postDict["userId"] as? Int ?? -1
@@ -50,6 +54,7 @@ class PostEntity {
         title = postDict["title"] as? String ?? ""
         body = postDict["body"] as? String ?? ""
     }
+    
 }
 
 class CommentEntity {

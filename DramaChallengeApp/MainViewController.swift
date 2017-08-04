@@ -10,9 +10,33 @@ import UIKit
 import Alamofire
 
 class FriendsViewController: UIViewController {
-
     
-    @IBOutlet weak var friendsTableView: UITableView!
+    enum MainPageSections : Int {
+        case friends = 0
+        case topPosts
+        
+        static var count : Int {
+            return topPosts.rawValue + 1
+        }
+    }
+    
+    enum MainPageCellIDs : String {
+        case friends = "FriendsCellID"
+        case topPosts = "PostCellID"
+    }
+    
+    enum MainPageVCIDs : String {
+        case friendDashboard = "FriendDashboardVCID"
+        case postDetail = "PostDetailsVCID"
+        case allPosts = "AllPostsVCID"
+    }
+    
+    @IBOutlet weak var friendsTableView: UITableView! {
+        didSet {
+            friendsTableView.estimatedRowHeight = 137
+            friendsTableView.rowHeight = UITableViewAutomaticDimension
+        }
+    }
     
     var userService = UserService()
     
@@ -45,21 +69,75 @@ class FriendsViewController: UIViewController {
 
 extension FriendsViewController : UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = MainPageSections.init(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .friends: return
+        case .topPosts:
+            
+            let post = userService.top3FriendPosts[indexPath.row]
+            self.pushToPostDetailView(post: post)
+        }
+    }
 }
 
 extension FriendsViewController : UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return MainPageSections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userService.users.count
+        guard let section = MainPageSections(rawValue: section) else { return 0 }
+        
+        switch section {
+        case .friends: return 1
+        case .topPosts: return userService.top3FriendPosts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCellID") as! FriendTableViewCell
-        let friend = self.userService.users[indexPath.row]
+        guard let section = MainPageSections(rawValue: indexPath.section) else { return UITableViewCell() }
         
-        cell.configureContactCell(friend: friend)
-        return cell
+        switch section {
+        case .friends:
+            // Return FriendsCarouselView
+            return UITableViewCell()
+        case .topPosts:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell // TODO: Make abbreviated post cell
+            let post = self.userService.top3FriendPosts[indexPath.row]
+            
+            cell.configureView(with: post, and: self)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let section = MainPageSections.init(rawValue: indexPath.section) else { return 0.0 }
+        
+        switch section {
+        case .friends: return 0.0
+        case .topPosts: return 140.0
+        }
+    }
+}
+
+extension FriendsViewController : AbbreviatedPostViewDelegate {
+    func didPressMoreButton() {
+        // Push to PostDetailVC
+        print("Pressed More Button")
+    }
+}
+
+fileprivate extension FriendsViewController {
+    
+    func pushToPostDetailView(post: PostEntity) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let postDetailVC = storyboard.instantiateViewController(withIdentifier: MainPageVCIDs.postDetail.rawValue) as! PostDetailsViewController
+        postDetailVC.post = post
+        navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
 

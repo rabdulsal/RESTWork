@@ -27,6 +27,11 @@
 		4CAF92071F3381A700F2556C /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92061F3381A700F2556C /* PostsListViewController.swift */; };
 		4CAF92091F3381BE00F2556C /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92081F3381BE00F2556C /* PostDetailsViewController.swift */; };
 		4CAF920C1F33929D00F2556C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF920B1F33929D00F2556C /* UserService.swift */; };
+		4CAF920E1F33D4C400F2556C /* AbbreviatedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF920D1F33D4C400F2556C /* AbbreviatedPostCell.swift */; };
+		4CAF92101F33D56D00F2556C /* AbbreviatedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF920F1F33D56D00F2556C /* AbbreviatedPostView.swift */; };
+		4CAF92121F33D58000F2556C /* AbbreviatedPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */; };
+		4CAF92161F34024100F2556C /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92151F34024100F2556C /* PostContentCell.swift */; };
+		4CAF921A1F34034300F2556C /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92191F34034300F2556C /* PostCommentCell.swift */; };
 		58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */; };
 		5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */; };
 		CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */; };
@@ -81,6 +86,11 @@
 		4CAF92061F3381A700F2556C /* PostsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
 		4CAF92081F3381BE00F2556C /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		4CAF920B1F33929D00F2556C /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		4CAF920D1F33D4C400F2556C /* AbbreviatedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedPostCell.swift; sourceTree = "<group>"; };
+		4CAF920F1F33D56D00F2556C /* AbbreviatedPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbbreviatedPostView.swift; sourceTree = "<group>"; };
+		4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbbreviatedPostView.xib; sourceTree = "<group>"; };
+		4CAF92151F34024100F2556C /* PostContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
+		4CAF92191F34034300F2556C /* PostCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentCell.swift; sourceTree = "<group>"; };
 		7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
 		AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +195,8 @@
 		4CAF91F31F3367E100F2556C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF92181F34030C00F2556C /* Friends */,
+				4CAF92171F34030400F2556C /* Posts */,
 				4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */,
 			);
 			name = Views;
@@ -235,6 +247,25 @@
 				4CAF920B1F33929D00F2556C /* UserService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		4CAF92171F34030400F2556C /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				4CAF920D1F33D4C400F2556C /* AbbreviatedPostCell.swift */,
+				4CAF920F1F33D56D00F2556C /* AbbreviatedPostView.swift */,
+				4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */,
+				4CAF92151F34024100F2556C /* PostContentCell.swift */,
+				4CAF92191F34034300F2556C /* PostCommentCell.swift */,
+			);
+			name = Posts;
+			sourceTree = "<group>";
+		};
+		4CAF92181F34030C00F2556C /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 		AA7957DD9E4BCA90D2220ADC /* Pods */ = {
@@ -381,6 +412,7 @@
 			files = (
 				4C9E81EE1F31B0D100263DDA /* LaunchScreen.storyboard in Resources */,
 				4C9E81EB1F31B0D100263DDA /* Assets.xcassets in Resources */,
+				4CAF92121F33D58000F2556C /* AbbreviatedPostView.xib in Resources */,
 				4C9E81E61F31B0D100263DDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,12 +579,16 @@
 				4CAF92051F33818E00F2556C /* PhotoDetailsViewController.swift in Sources */,
 				4CAF91FC1F33802B00F2556C /* FriendListViewController.swift in Sources */,
 				4CAF92031F33817B00F2556C /* PhotosListViewController.swift in Sources */,
+				4CAF92161F34024100F2556C /* PostContentCell.swift in Sources */,
+				4CAF920E1F33D4C400F2556C /* AbbreviatedPostCell.swift in Sources */,
 				4CAF91FA1F33801800F2556C /* FriendDashboardViewController.swift in Sources */,
+				4CAF92101F33D56D00F2556C /* AbbreviatedPostView.swift in Sources */,
 				4CAF92071F3381A700F2556C /* PostsListViewController.swift in Sources */,
 				4CAF91FF1F33809500F2556C /* FriendDetailViewController.swift in Sources */,
 				4C9E81E31F31B0D100263DDA /* MainViewController.swift in Sources */,
 				4C9E81E91F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld in Sources */,
 				4CAF91EE1F32A40E00F2556C /* NetworkRequestService.swift in Sources */,
+				4CAF921A1F34034300F2556C /* PostCommentCell.swift in Sources */,
 				4CAF92091F3381BE00F2556C /* PostDetailsViewController.swift in Sources */,
 				4CAF91F01F32D93000F2556C /* UserEntity.swift in Sources */,
 				4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */,

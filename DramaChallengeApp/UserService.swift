@@ -16,6 +16,16 @@ class UserService {
     var photos = [PhotoEntity]()
     var posts = [PostEntity]()
     var comments = [CommentEntity]()
+    var top3FriendPosts: [PostEntity] {
+        var topPosts = [PostEntity]()
+        for (idx, user) in self.users.enumerated() {
+            if idx == 3 { break }
+            if let posts = user.posts {
+                 topPosts.append(posts.first!)
+            }
+        }
+        return topPosts
+    }
     var dataUpdatedCallback: (()->Void)?
     
     func loadAllData() {
@@ -172,13 +182,8 @@ fileprivate extension UserService {
             user.albums = self.albums.filter { $0.userId == user.id }
         }
         
-        for user in self.users {
-            if let albums = user.albums, let posts = user.posts {
-                print("User \(user.name) Albums: \(albums.count) Posts: \(posts.count)")
-            }
-        }
-        
         if let callback = dataUpdatedCallback {
+            print("Top Friend Posts count:", top3FriendPosts.count)
             callback()
         }
     }
