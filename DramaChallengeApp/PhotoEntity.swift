@@ -65,7 +65,7 @@ class CommentEntity {
     var body: String
     
     init(commentDict: [String:Any]) {
-        postId = commentDict["userId"] as? Int ?? -1
+        postId = commentDict["postId"] as? Int ?? -1
         id = commentDict["id"] as? Int ?? -1
         name = commentDict["title"] as? String ?? ""
         email = commentDict["email"] as? String ?? ""

@@ -70,7 +70,7 @@ fileprivate extension UserService {
     
     // Comments
     static func getCommentsRequest(completion: ((_ comments: [CommentEntity])->Void)?=nil) {
-        Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
+        Alamofire.request("https://jsonplaceholder.typicode.com/comments").responseJSON { response in
             
             var comments = [CommentEntity]()
             if let json = response.result.value as? [[String:Any]] {
