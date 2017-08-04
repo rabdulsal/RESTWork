@@ -63,7 +63,7 @@ extension FriendDashboardViewController : UITableViewDataSource {
         
         switch section{
         case .topPosts: return 3
-        case .topPhotos: return 0
+        case .topPhotos: return 1
         }
     }
     
@@ -72,7 +72,7 @@ extension FriendDashboardViewController : UITableViewDataSource {
         
         switch section {
         case .topPosts: return 137
-        case .topPhotos: return 0
+        case .topPhotos: return 100
         }
     }
     
@@ -88,7 +88,10 @@ extension FriendDashboardViewController : UITableViewDataSource {
             cell.configureView(with: post, and: self)
             return cell
         case .topPhotos:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCarouselCellID") as! PhotosCarouselTableCell
+            let photos = self.friend.photos!
+            cell.configureCarousel(with: photos, and: self)
+            return cell
         }
     }
 }
@@ -99,6 +102,13 @@ extension FriendDashboardViewController : AbbreviatedPostViewDelegate {
         let postDetailVC = storyboard.instantiateViewController(withIdentifier: "PostDetailsVCID") as! PostDetailsViewController
         postDetailVC.post = post
         navigationController?.pushViewController(postDetailVC, animated: true)
+    }
+}
+
+extension FriendDashboardViewController : FriendCarouselSelectable {
+    
+    func didSelectFriend(friend: UserEntity) {
+        //
     }
 }
 

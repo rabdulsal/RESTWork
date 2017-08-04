@@ -19,7 +19,7 @@ class AbbreviatedPostView : UIView {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton! {
         didSet {
-            titleLabel.tintColor = UIColor.dramaFeverRed()
+            moreButton.tintColor = UIColor.dramaFeverRed()
         }
     }
     

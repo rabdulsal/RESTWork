@@ -1,5 +1,5 @@
 //
-//  PostsCarouselTableCell.swift
+//  PhotosCarouselCollectionCell.swift
 //  DramaChallengeApp
 //
 //  Created by Rashad Abdul-Salaam on 8/4/17.
@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class PostsCarouselTableCell : UITableViewCell {
+
+class PhotosCarouselCollectionCell : UICollectionViewCell {
     
     
-    
+    @IBOutlet weak var photoImageView: UIImageView!
 }

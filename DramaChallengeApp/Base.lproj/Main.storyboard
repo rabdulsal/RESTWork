@@ -191,7 +191,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2AH-Mq-mCd" id="Mjh-uZ-417">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-AJ-aon" customClass="AbbreviatedPostView" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -210,7 +210,7 @@
                                             <outlet property="postView" destination="lFM-AJ-aon" id="p7p-Te-KO6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCarouselCellID" rowHeight="100" id="Brc-Of-1ui" customClass="FriendsCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotosCarouselCellID" rowHeight="100" id="Brc-Of-1ui" customClass="PhotosCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="265" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Brc-Of-1ui" id="VYo-HD-gYt">
@@ -227,7 +227,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCollectionCellID" id="qMx-qa-PZ8">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionCellID" id="qMx-qa-PZ8" customClass="PhotosCarouselCollectionCell" customModule="DramaChallengeApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="1" width="83" height="82"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -246,7 +246,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="tqe-8m-y58" secondAttribute="bottom" id="gw9-Lg-rhh"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="friendImageView" destination="tqe-8m-y58" id="JKB-Rk-PtV"/>
+                                                                <outlet property="photoImageView" destination="tqe-8m-y58" id="HuB-Gg-uHk"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -260,7 +260,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="carousel" destination="8k0-qF-9lL" id="5L8-2B-tlI"/>
+                                            <outlet property="carousel" destination="8k0-qF-9lL" id="eVP-jt-9Yl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -26,6 +26,16 @@ class UserService {
         }
         return topPosts
     }
+    static var top10FriendPhotos: [PhotoEntity] {
+        var topPhotos = [PhotoEntity]()
+        for (idx, user) in self.users.enumerated() {
+            if idx == 10 { break }
+            if let photos = user.photos {
+                topPhotos.append(photos.first!)
+            }
+        }
+        return topPhotos
+    }
     static var dataUpdatedCallback: (()->Void)?
     
     static func loadAllData() {

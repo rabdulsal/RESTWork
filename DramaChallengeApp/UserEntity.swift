@@ -21,10 +21,18 @@ class UserEntity {
     var albums: [AlbumEntity]? {
         didSet {
             guard
-                let url = albums?.first?.photos?.first?.urlString,
-                let thumbURL = albums?.first?.photos?.first?.thumbURLString else { return }
+                let photos = albums?.first?.photos,
+                let url = photos.first?.urlString,
+                let thumbURL = photos.first?.thumbURLString else { return }
             avatarURL = url
             avatarThumbURL = thumbURL
+            
+            var topPhotos = [PhotoEntity]()
+            for (idx, photo) in photos.enumerated() {
+                if idx == 10 { break }
+                topPhotos.append(photo)
+            }
+            self.photos = topPhotos
         }
     }
     var posts: [PostEntity]?=nil
