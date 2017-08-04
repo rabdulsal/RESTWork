@@ -40,6 +40,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,10 +103,12 @@ extension MainViewController : UITableViewDataSource {
         
         switch section {
         case .friends:
-            // Return FriendsCarouselView
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCarouselCellID") as! FriendsCarouselTableCell
+            let friends = UserService.users
+            cell.configureCarousel(with: friends)
+            return cell
         case .topPosts:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell // TODO: Make abbreviated post cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell
             let post = UserService.top3FriendPosts[indexPath.row]
             
             cell.configureView(with: post, and: self)
@@ -116,7 +120,7 @@ extension MainViewController : UITableViewDataSource {
         guard let section = MainPageSections.init(rawValue: indexPath.section) else { return 0.0 }
         
         switch section {
-        case .friends: return 0.0
+        case .friends: return 100.0
         case .topPosts: return 140.0
         }
     }

@@ -11,5 +11,5 @@ import UIKit
 
 class FriendsCarouselCollectionCell : UICollectionViewCell {
     
-    @IBOutlet weak var friendImageView: UIImageView!
+    @IBOutlet weak var friendImageView: FriendProfileImageView!
 }

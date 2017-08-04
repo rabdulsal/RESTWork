@@ -11,7 +11,7 @@ import UIKit
 
 class PostCommentCell : UITableViewCell {
     
-    @IBOutlet weak var commenterImage: UIImageView!
+    @IBOutlet weak var commenterImage: FriendProfileImageView!
     @IBOutlet weak var body: UILabel!
     
     

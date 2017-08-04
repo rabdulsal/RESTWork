@@ -20,7 +20,7 @@ class PostDetailsViewController : UIViewController {
         }
     }
     
-    @IBOutlet weak var authorImage: UIImageView!
+    @IBOutlet weak var authorImage: FriendProfileImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postBodyLabel: UILabel!
     @IBOutlet weak var postAuthorLabel: UILabel!
