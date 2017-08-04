@@ -105,7 +105,7 @@ extension MainViewController : UITableViewDataSource {
         case .friends:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCarouselCellID") as! FriendsCarouselTableCell
             let friends = UserService.users
-            cell.configureCarousel(with: friends)
+            cell.configureCarousel(with: friends, and: self)
             return cell
         case .topPosts:
             let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell
@@ -135,6 +135,12 @@ extension MainViewController : UITableViewDataSource {
     }
 }
 
+extension MainViewController : FriendCarouselSelectable {
+    func didSelectFriend(friend: UserEntity) {
+        print("From MainVC - pressed on friend:", friend.name)
+    }
+}
+
 extension MainViewController : AbbreviatedPostViewDelegate {
     func didPressMoreButton() {
         // Push to PostDetailVC
@@ -149,6 +155,10 @@ fileprivate extension MainViewController {
         let postDetailVC = storyboard.instantiateViewController(withIdentifier: MainPageVCIDs.postDetail.rawValue) as! PostDetailsViewController
         postDetailVC.post = post
         navigationController?.pushViewController(postDetailVC, animated: true)
+    }
+    
+    func pushToFriendDashboard(friend: UserEntity) {
+        
     }
 }
 

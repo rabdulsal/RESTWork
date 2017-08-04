@@ -36,6 +36,7 @@
 		4CAF921E1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF921D1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift */; };
 		4CAF92211F34358C00F2556C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */; };
 		4CAF92231F3495D800F2556C /* FriendProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92221F3495D800F2556C /* FriendProfileImageView.swift */; };
+		4CAF92251F34AAE600F2556C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92241F34AAE600F2556C /* UIColor+Extension.swift */; };
 		58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */; };
 		5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */; };
 		CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */; };
@@ -99,6 +100,7 @@
 		4CAF921D1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCarouselCollectionCell.swift; sourceTree = "<group>"; };
 		4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4CAF92221F3495D800F2556C /* FriendProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendProfileImageView.swift; sourceTree = "<group>"; };
+		4CAF92241F34AAE600F2556C /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
 		AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */,
+				4CAF92241F34AAE600F2556C /* UIColor+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				4C9E81E91F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld in Sources */,
 				4CAF91EE1F32A40E00F2556C /* NetworkRequestService.swift in Sources */,
 				4CAF921A1F34034300F2556C /* PostCommentCell.swift in Sources */,
+				4CAF92251F34AAE600F2556C /* UIColor+Extension.swift in Sources */,
 				4CAF92091F3381BE00F2556C /* PostDetailsViewController.swift in Sources */,
 				4CAF91F01F32D93000F2556C /* UserEntity.swift in Sources */,
 				4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */,

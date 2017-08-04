@@ -27,7 +27,7 @@ class FriendsCarouselTableCell : UITableViewCell {
     
     func configureCarousel(with friends: [UserEntity], and delegate: FriendCarouselSelectable) {
         self.friends = friends
-        
+        self.delegate = delegate
         carousel.reloadData()
     }
 }
