@@ -18,9 +18,19 @@ class UserEntity {
     var website: String
     //    var geo: Geotag
     var company: CompanyEntity
-    var albums: [AlbumEntity]?=nil
+    var albums: [AlbumEntity]? {
+        didSet {
+            guard
+                let url = albums?.first?.photos?.first?.urlString,
+                let thumbURL = albums?.first?.photos?.first?.thumbURLString else { return }
+            avatarURL = url
+            avatarThumbURL = thumbURL
+        }
+    }
     var posts: [PostEntity]?=nil
-    var photos: [PhotoEntity]?=nil
+    var photos: [PhotoEntity]?
+    var avatarURL: String?
+    var avatarThumbURL: String?
     
     init(userJSON: [String : Any]) {
         self.id = userJSON["id"] as? Int ?? -1

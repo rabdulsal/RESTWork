@@ -33,6 +33,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var friendsTableView: UITableView! {
         didSet {
+            friendsTableView.delegate = self
+            friendsTableView.dataSource = self
             friendsTableView.estimatedRowHeight = 137
             friendsTableView.rowHeight = UITableViewAutomaticDimension
         }
@@ -40,8 +42,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendsTableView.delegate = self
-        friendsTableView.dataSource = self
+        
         UserService.dataUpdatedCallback = {
             self.reloadView()
         }
@@ -117,6 +118,15 @@ extension MainViewController : UITableViewDataSource {
         switch section {
         case .friends: return 0.0
         case .topPosts: return 140.0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = MainPageSections.init(rawValue: section) else { return nil }
+        
+        switch section {
+        case .friends: return "Friends"
+        case .topPosts: return "Top Posts"
         }
     }
 }

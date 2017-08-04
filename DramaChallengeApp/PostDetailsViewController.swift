@@ -39,7 +39,9 @@ class PostDetailsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let url = post.author.avatarThumbURL {
+            authorImage.imageFromServerURL(urlString: url)
+        }
         postTitleLabel.text = post.title
         postAuthorLabel.text = post.author.name
     }
@@ -89,6 +91,9 @@ extension PostDetailsViewController : UITableViewDataSource {
             if let comments = post.comments {
                 let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifiers[1]) as! PostCommentCell
                 let comment = comments[indexPath.row]
+                if let url = comment.author.avatarThumbURL {
+                    cell.commenterImage.imageFromServerURL(urlString: url)
+                }
                     cell.body.text = comment.body
                 return cell
             } else {

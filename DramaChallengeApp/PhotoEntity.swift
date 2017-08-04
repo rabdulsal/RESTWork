@@ -16,7 +16,7 @@ class PhotoEntity {
     var thumbURLString : String
     
     init(photoDict: [String:Any]) {
-        albumId = photoDict["albumtId"] as? Int ?? -1
+        albumId = photoDict["albumId"] as? Int ?? -1
         id = photoDict["id"] as? Int ?? -1
         title = photoDict["title"] as? String ?? ""
         urlString = photoDict["url"] as? String ?? ""
@@ -63,6 +63,12 @@ class CommentEntity {
     var name: String
     var email: String
     var body: String
+    var parentPost: PostEntity {
+        return UserService.posts.filter { $0.id == self.postId }.first!
+    }
+    var author: UserEntity {
+        return UserService.users.filter { $0.id == self.parentPost.author.id }.first!
+    }
     
     init(commentDict: [String:Any]) {
         postId = commentDict["postId"] as? Int ?? -1

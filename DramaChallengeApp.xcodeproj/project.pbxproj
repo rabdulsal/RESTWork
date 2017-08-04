@@ -32,6 +32,9 @@
 		4CAF92121F33D58000F2556C /* AbbreviatedPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */; };
 		4CAF92161F34024100F2556C /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92151F34024100F2556C /* PostContentCell.swift */; };
 		4CAF921A1F34034300F2556C /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92191F34034300F2556C /* PostCommentCell.swift */; };
+		4CAF921C1F342BBF00F2556C /* FriendsCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF921B1F342BBF00F2556C /* FriendsCarouselCell.swift */; };
+		4CAF921E1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF921D1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift */; };
+		4CAF92211F34358C00F2556C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */; };
 		58D79F10DD1BDBD519A0E4FC /* Pods_DramaChallengeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBB27404D49D35B79F2E07 /* Pods_DramaChallengeAppUITests.framework */; };
 		5B12206906693D3811729EA6 /* Pods_DramaChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */; };
 		CE615D14759CBBF484A4C285 /* Pods_DramaChallengeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACF1806C9F5B99BF0CB8B8A /* Pods_DramaChallengeAppTests.framework */; };
@@ -91,6 +94,9 @@
 		4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbbreviatedPostView.xib; sourceTree = "<group>"; };
 		4CAF92151F34024100F2556C /* PostContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
 		4CAF92191F34034300F2556C /* PostCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentCell.swift; sourceTree = "<group>"; };
+		4CAF921B1F342BBF00F2556C /* FriendsCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCarouselCell.swift; sourceTree = "<group>"; };
+		4CAF921D1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCarouselCollectionCell.swift; sourceTree = "<group>"; };
+		4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		7C3AA65F8A85C67248F6F04C /* Pods-DramaChallengeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8BE2DFE8B8E016DEB5298 /* Pods-DramaChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
 		AC474F140FF5C570E4D01D87 /* Pods-DramaChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeApp/Pods-DramaChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		4C9E81DF1F31B0D100263DDA /* DramaChallengeApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF921F1F34356700F2556C /* Extensions */,
 				4CAF920A1F33927F00F2556C /* Services */,
 				4CAF91EC1F32A22000F2556C /* Models */,
 				4CAF91F31F3367E100F2556C /* Views */,
@@ -264,8 +271,18 @@
 		4CAF92181F34030C00F2556C /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF921B1F342BBF00F2556C /* FriendsCarouselCell.swift */,
+				4CAF921D1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift */,
 			);
 			name = Friends;
+			sourceTree = "<group>";
+		};
+		4CAF921F1F34356700F2556C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		AA7957DD9E4BCA90D2220ADC /* Pods */ = {
@@ -576,11 +593,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CAF921E1F342F0A00F2556C /* FriendsCarouselCollectionCell.swift in Sources */,
 				4CAF92051F33818E00F2556C /* PhotoDetailsViewController.swift in Sources */,
 				4CAF91FC1F33802B00F2556C /* FriendListViewController.swift in Sources */,
 				4CAF92031F33817B00F2556C /* PhotosListViewController.swift in Sources */,
 				4CAF92161F34024100F2556C /* PostContentCell.swift in Sources */,
 				4CAF920E1F33D4C400F2556C /* AbbreviatedPostCell.swift in Sources */,
+				4CAF921C1F342BBF00F2556C /* FriendsCarouselCell.swift in Sources */,
 				4CAF91FA1F33801800F2556C /* FriendDashboardViewController.swift in Sources */,
 				4CAF92101F33D56D00F2556C /* AbbreviatedPostView.swift in Sources */,
 				4CAF92071F3381A700F2556C /* PostsListViewController.swift in Sources */,
@@ -592,6 +611,7 @@
 				4CAF92091F3381BE00F2556C /* PostDetailsViewController.swift in Sources */,
 				4CAF91F01F32D93000F2556C /* UserEntity.swift in Sources */,
 				4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */,
+				4CAF92211F34358C00F2556C /* UIImageView+Extension.swift in Sources */,
 				4CAF920C1F33929D00F2556C /* UserService.swift in Sources */,
 				4CAF91F21F32D97400F2556C /* PhotoEntity.swift in Sources */,
 				4CAF91F51F33680D00F2556C /* FriendTableViewCell.swift in Sources */,

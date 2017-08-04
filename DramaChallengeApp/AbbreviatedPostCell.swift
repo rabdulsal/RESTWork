@@ -13,6 +13,11 @@ class AbbreviatedPostCell : UITableViewCell {
     
     @IBOutlet weak var postView: AbbreviatedPostView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
     func configureView(with post: PostEntity, and delegate: AbbreviatedPostViewDelegate) {
         postView.delegate = delegate
         postView.titleLabel.text = post.title
