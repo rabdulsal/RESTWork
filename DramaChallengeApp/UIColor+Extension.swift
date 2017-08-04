@@ -14,4 +14,8 @@ extension UIColor {
     static func dramaFeverRed() -> UIColor {
         return UIColor(red: 246.0/255.0, green: 65.0/255.0, blue: 82/255.0, alpha: 1.0)
     }
+    
+    static func dramaFeverGrey() -> UIColor {
+        return UIColor(red: 251.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+    }
 }

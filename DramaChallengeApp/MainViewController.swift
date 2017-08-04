@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     }
     
     enum MainPageVCIDs : String {
-        case friendDashboard = "FriendDashboardVCID"
+        case friendDashboard = "FriendDashboardViewControllerID"
         case postDetail = "PostDetailsVCID"
         case allPosts = "AllPostsVCID"
     }
@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isTranslucent = false
         UserService.dataUpdatedCallback = {
             self.reloadView()
         }
@@ -120,8 +120,8 @@ extension MainViewController : UITableViewDataSource {
         guard let section = MainPageSections.init(rawValue: indexPath.section) else { return 0.0 }
         
         switch section {
-        case .friends: return 100.0
-        case .topPosts: return 140.0
+        case .friends: return 132
+        case .topPosts: return 137
         }
     }
     
@@ -129,22 +129,21 @@ extension MainViewController : UITableViewDataSource {
         guard let section = MainPageSections.init(rawValue: section) else { return nil }
         
         switch section {
-        case .friends: return "Friends"
-        case .topPosts: return "Top Posts"
+        case .friends: return "Your Friends"
+        case .topPosts: return "Top Friends' Posts"
         }
     }
 }
 
 extension MainViewController : FriendCarouselSelectable {
     func didSelectFriend(friend: UserEntity) {
-        print("From MainVC - pressed on friend:", friend.name)
+        pushToFriendDashboard(friend: friend)
     }
 }
 
 extension MainViewController : AbbreviatedPostViewDelegate {
-    func didPressMoreButton() {
-        // Push to PostDetailVC
-        print("Pressed More Button")
+    func didPressMoreButton(post: PostEntity) {
+        pushToPostDetailView(post: post)
     }
 }
 
@@ -158,7 +157,10 @@ fileprivate extension MainViewController {
     }
     
     func pushToFriendDashboard(friend: UserEntity) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let friendDashVC = storyboard.instantiateViewController(withIdentifier: MainPageVCIDs.friendDashboard.rawValue) as! FriendDashboardViewController
+        friendDashVC.friend = friend
+        navigationController?.pushViewController(friendDashVC, animated: true)
     }
 }
 

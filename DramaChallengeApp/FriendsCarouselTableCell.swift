@@ -25,6 +25,11 @@ class FriendsCarouselTableCell : UITableViewCell {
     var friends: [UserEntity]!
     var delegate: FriendCarouselSelectable?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = UIColor.dramaFeverGrey()
+    }
+    
     func configureCarousel(with friends: [UserEntity], and delegate: FriendCarouselSelectable) {
         self.friends = friends
         self.delegate = delegate

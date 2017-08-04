@@ -10,17 +10,23 @@ import Foundation
 import UIKit
 
 protocol AbbreviatedPostViewDelegate {
-    func didPressMoreButton()
+    func didPressMoreButton(post: PostEntity)
 }
 
 class AbbreviatedPostView : UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton! {
+        didSet {
+            titleLabel.tintColor = UIColor.dramaFeverRed()
+        }
+    }
     
     
     var contentView: UIView?
     var delegate: AbbreviatedPostViewDelegate?
+    var post: PostEntity!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,13 +41,13 @@ class AbbreviatedPostView : UIView {
     // IBActions
     
     @IBAction func pressedMoreButton(_ sender: Any) {
-        delegate?.didPressMoreButton()
+        delegate?.didPressMoreButton(post: self.post)
     }
     
     func xibSetup() {
         contentView = loadViewFromNib()
         contentView!.frame = bounds
-        //contentView!.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        contentView!.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         addSubview(contentView!)
     }
     

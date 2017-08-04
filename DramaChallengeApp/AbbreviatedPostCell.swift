@@ -22,6 +22,7 @@ class AbbreviatedPostCell : UITableViewCell {
         postView.delegate = delegate
         postView.titleLabel.text = post.title
         postView.bodyLabel.text = post.body
+        postView.post = post
     }
     
 }
