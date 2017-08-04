@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,7 +147,27 @@
                             <constraint firstItem="RAf-aC-0q5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R2a-8b-Thz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Onv-6z-5Kb"/>
+                    <navigationItem key="navigationItem" id="Onv-6z-5Kb">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="8kW-dW-RqL">
+                            <rect key="frame" x="147.5" y="5.5" width="80" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="df-logo-flame" translatesAutoresizingMaskIntoConstraints="NO" id="Ol6-0N-E1H">
+                                    <rect key="frame" x="31" y="0.0" width="18" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Ol6-0N-E1H" secondAttribute="height" multiplier="6:11" id="8lq-dL-GQi"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Ol6-0N-E1H" firstAttribute="centerY" secondItem="8kW-dW-RqL" secondAttribute="centerY" id="6KW-PI-g9G"/>
+                                <constraint firstAttribute="bottom" secondItem="Ol6-0N-E1H" secondAttribute="bottom" id="OLu-vY-xOh"/>
+                                <constraint firstItem="Ol6-0N-E1H" firstAttribute="centerX" secondItem="8kW-dW-RqL" secondAttribute="centerX" id="VcU-il-86v"/>
+                                <constraint firstItem="Ol6-0N-E1H" firstAttribute="top" secondItem="8kW-dW-RqL" secondAttribute="top" id="cb0-1w-hgZ"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="friendsTableView" destination="RAf-aC-0q5" id="SOl-Xh-T3o"/>
                     </connections>
@@ -345,4 +366,7 @@
             <point key="canvasLocation" x="525.60000000000002" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="df-logo-flame" width="42" height="106"/>
+    </resources>
 </document>
