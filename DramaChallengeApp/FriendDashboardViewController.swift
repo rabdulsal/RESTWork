@@ -26,7 +26,11 @@ class FriendDashboardViewController : UIViewController {
     }
     
     @IBOutlet weak var profileImageView: FriendProfileImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel! {
+        didSet {
+            nameLabel.font = UIFont.ralewayBold(20)
+        }
+    }
     @IBOutlet weak var dashboardTableView: UITableView! {
         didSet {
             dashboardTableView.delegate = self

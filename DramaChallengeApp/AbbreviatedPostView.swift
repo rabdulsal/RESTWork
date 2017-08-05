@@ -15,13 +15,9 @@ protocol AbbreviatedPostViewDelegate {
 
 class AbbreviatedPostView : UIView {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var moreButton: UIButton! {
-        didSet {
-            moreButton.tintColor = UIColor.dramaFeverRed()
-        }
-    }
+    @IBOutlet weak var titleLabel: DFSubTitleLabel!
+    @IBOutlet weak var bodyLabel: DFBasicContentLabel!
+    @IBOutlet weak var moreButton: DFBasicClearButton!
     
     
     var contentView: UIView?

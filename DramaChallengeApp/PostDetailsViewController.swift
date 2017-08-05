@@ -42,7 +42,7 @@ class PostDetailsViewController : UIViewController {
         if let url = post.author.avatarThumbURL {
             authorImage.imageFromServerURL(urlString: url)
         }
-        postTitleLabel.text = post.title
+        postTitleLabel.text = post.title.uppercased()
         postAuthorLabel.text = post.author.name
     }
 }

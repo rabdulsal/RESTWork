@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		4C1A01261F34DB300055702F /* PhotosCarouselTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01251F34DB2F0055702F /* PhotosCarouselTableCell.swift */; };
 		4C1A01291F34DFA30055702F /* PhotosCarouselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01281F34DFA30055702F /* PhotosCarouselCollectionCell.swift */; };
+		4C1A01351F3573A30055702F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012B1F3573A30055702F /* OFL.txt */; };
+		4C1A01361F3573A30055702F /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012C1F3573A30055702F /* Raleway-Bold.ttf */; };
+		4C1A01371F3573A30055702F /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012D1F3573A30055702F /* Raleway-ExtraBold.ttf */; };
+		4C1A01381F3573A30055702F /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012E1F3573A30055702F /* Raleway-ExtraLight.ttf */; };
+		4C1A01391F3573A30055702F /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012F1F3573A30055702F /* Raleway-Heavy.ttf */; };
+		4C1A013A1F3573A30055702F /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01301F3573A30055702F /* Raleway-Light.ttf */; };
+		4C1A013B1F3573A30055702F /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01311F3573A30055702F /* Raleway-Medium.ttf */; };
+		4C1A013C1F3573A30055702F /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01321F3573A30055702F /* Raleway-Regular.ttf */; };
+		4C1A013D1F3573A30055702F /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01331F3573A30055702F /* Raleway-SemiBold.ttf */; };
+		4C1A013E1F3573A30055702F /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01341F3573A30055702F /* Raleway-Thin.ttf */; };
+		4C1A01401F3576420055702F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A013F1F3576420055702F /* UIFont+Extension.swift */; };
+		4C1A01421F357B400055702F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01411F357B400055702F /* UILabel+Extension.swift */; };
+		4C1A01441F357F4E0055702F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01431F357F4E0055702F /* UIButton+Extension.swift */; };
+		4C1A01461F358D1D0055702F /* PostsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01451F358D1D0055702F /* PostsFooterView.swift */; };
+		4C1A01481F358DBE0055702F /* PostsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A01471F358DBE0055702F /* PostsFooterView.xib */; };
 		4C9E81E11F31B0D100263DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E01F31B0D100263DDA /* AppDelegate.swift */; };
 		4C9E81E31F31B0D100263DDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E81E21F31B0D100263DDA /* MainViewController.swift */; };
 		4C9E81E61F31B0D100263DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E81E41F31B0D100263DDA /* Main.storyboard */; };
@@ -68,6 +83,21 @@
 		393B295B2367180D877304BC /* Pods-DramaChallengeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C1A01251F34DB2F0055702F /* PhotosCarouselTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCarouselTableCell.swift; sourceTree = "<group>"; };
 		4C1A01281F34DFA30055702F /* PhotosCarouselCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCarouselCollectionCell.swift; sourceTree = "<group>"; };
+		4C1A012B1F3573A30055702F /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OFL.txt; path = "../../../Downloads/matt-mcinerney_raleway/OFL.txt"; sourceTree = "<group>"; };
+		4C1A012C1F3573A30055702F /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		4C1A012D1F3573A30055702F /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraBold.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		4C1A012E1F3573A30055702F /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraLight.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		4C1A012F1F3573A30055702F /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Heavy.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Heavy.ttf"; sourceTree = "<group>"; };
+		4C1A01301F3573A30055702F /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Light.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Light.ttf"; sourceTree = "<group>"; };
+		4C1A01311F3573A30055702F /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		4C1A01321F3573A30055702F /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		4C1A01331F3573A30055702F /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		4C1A01341F3573A30055702F /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.ttf"; path = "../../../Downloads/matt-mcinerney_raleway/Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		4C1A013F1F3576420055702F /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		4C1A01411F357B400055702F /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		4C1A01431F357F4E0055702F /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4C1A01451F358D1D0055702F /* PostsFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsFooterView.swift; sourceTree = "<group>"; };
+		4C1A01471F358DBE0055702F /* PostsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsFooterView.xib; sourceTree = "<group>"; };
 		4C6083BC2261ACD4DDE51A14 /* Pods-DramaChallengeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C9E81DD1F31B0D100263DDA /* DramaChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DramaChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9E81E01F31B0D100263DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +178,23 @@
 			name = Photos;
 			sourceTree = "<group>";
 		};
+		4C1A012A1F3572EF0055702F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C1A012B1F3573A30055702F /* OFL.txt */,
+				4C1A012C1F3573A30055702F /* Raleway-Bold.ttf */,
+				4C1A012D1F3573A30055702F /* Raleway-ExtraBold.ttf */,
+				4C1A012E1F3573A30055702F /* Raleway-ExtraLight.ttf */,
+				4C1A012F1F3573A30055702F /* Raleway-Heavy.ttf */,
+				4C1A01301F3573A30055702F /* Raleway-Light.ttf */,
+				4C1A01311F3573A30055702F /* Raleway-Medium.ttf */,
+				4C1A01321F3573A30055702F /* Raleway-Regular.ttf */,
+				4C1A01331F3573A30055702F /* Raleway-SemiBold.ttf */,
+				4C1A01341F3573A30055702F /* Raleway-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4C9E81D41F31B0D100263DDA = {
 			isa = PBXGroup;
 			children = (
@@ -173,12 +220,14 @@
 		4C9E81DF1F31B0D100263DDA /* DramaChallengeApp */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A012A1F3572EF0055702F /* Resources */,
 				4CAF921F1F34356700F2556C /* Extensions */,
 				4CAF920A1F33927F00F2556C /* Services */,
 				4CAF91EC1F32A22000F2556C /* Models */,
 				4CAF91F31F3367E100F2556C /* Views */,
 				4CAF91F61F337FCE00F2556C /* Controllers */,
 				4C9E81E01F31B0D100263DDA /* AppDelegate.swift */,
+				4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */,
 				4C9E81E41F31B0D100263DDA /* Main.storyboard */,
 				4C9E81EA1F31B0D100263DDA /* Assets.xcassets */,
 				4C9E81EC1F31B0D100263DDA /* LaunchScreen.storyboard */,
@@ -222,7 +271,6 @@
 				4C1A01271F34DF8E0055702F /* Photos */,
 				4CAF92181F34030C00F2556C /* Friends */,
 				4CAF92171F34030400F2556C /* Posts */,
-				4CAF91F41F33680D00F2556C /* FriendTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,6 +330,8 @@
 				4CAF92111F33D58000F2556C /* AbbreviatedPostView.xib */,
 				4CAF92151F34024100F2556C /* PostContentCell.swift */,
 				4CAF92191F34034300F2556C /* PostCommentCell.swift */,
+				4C1A01451F358D1D0055702F /* PostsFooterView.swift */,
+				4C1A01471F358DBE0055702F /* PostsFooterView.xib */,
 			);
 			name = Posts;
 			sourceTree = "<group>";
@@ -301,6 +351,9 @@
 			children = (
 				4CAF92201F34358C00F2556C /* UIImageView+Extension.swift */,
 				4CAF92241F34AAE600F2556C /* UIColor+Extension.swift */,
+				4C1A013F1F3576420055702F /* UIFont+Extension.swift */,
+				4C1A01411F357B400055702F /* UILabel+Extension.swift */,
+				4C1A01431F357F4E0055702F /* UIButton+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -447,10 +500,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1A01381F3573A30055702F /* Raleway-ExtraLight.ttf in Resources */,
+				4C1A013A1F3573A30055702F /* Raleway-Light.ttf in Resources */,
+				4C1A01351F3573A30055702F /* OFL.txt in Resources */,
+				4C1A01361F3573A30055702F /* Raleway-Bold.ttf in Resources */,
 				4C9E81EE1F31B0D100263DDA /* LaunchScreen.storyboard in Resources */,
+				4C1A01481F358DBE0055702F /* PostsFooterView.xib in Resources */,
 				4C9E81EB1F31B0D100263DDA /* Assets.xcassets in Resources */,
 				4CAF92121F33D58000F2556C /* AbbreviatedPostView.xib in Resources */,
+				4C1A013C1F3573A30055702F /* Raleway-Regular.ttf in Resources */,
 				4C9E81E61F31B0D100263DDA /* Main.storyboard in Resources */,
+				4C1A013D1F3573A30055702F /* Raleway-SemiBold.ttf in Resources */,
+				4C1A013B1F3573A30055702F /* Raleway-Medium.ttf in Resources */,
+				4C1A01371F3573A30055702F /* Raleway-ExtraBold.ttf in Resources */,
+				4C1A01391F3573A30055702F /* Raleway-Heavy.ttf in Resources */,
+				4C1A013E1F3573A30055702F /* Raleway-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,9 +683,11 @@
 				4CAF92031F33817B00F2556C /* PhotosListViewController.swift in Sources */,
 				4CAF92161F34024100F2556C /* PostContentCell.swift in Sources */,
 				4CAF920E1F33D4C400F2556C /* AbbreviatedPostCell.swift in Sources */,
+				4C1A01401F3576420055702F /* UIFont+Extension.swift in Sources */,
 				4CAF921C1F342BBF00F2556C /* FriendsCarouselTableCell.swift in Sources */,
 				4CAF91FA1F33801800F2556C /* FriendDashboardViewController.swift in Sources */,
 				4CAF92101F33D56D00F2556C /* AbbreviatedPostView.swift in Sources */,
+				4C1A01441F357F4E0055702F /* UIButton+Extension.swift in Sources */,
 				4CAF92071F3381A700F2556C /* PostsListViewController.swift in Sources */,
 				4CAF91FF1F33809500F2556C /* FriendDetailViewController.swift in Sources */,
 				4C1A01261F34DB300055702F /* PhotosCarouselTableCell.swift in Sources */,
@@ -636,9 +702,11 @@
 				4CAF92211F34358C00F2556C /* UIImageView+Extension.swift in Sources */,
 				4CAF920C1F33929D00F2556C /* UserService.swift in Sources */,
 				4CAF91F21F32D97400F2556C /* PhotoEntity.swift in Sources */,
+				4C1A01421F357B400055702F /* UILabel+Extension.swift in Sources */,
 				4CAF92231F3495D800F2556C /* FriendProfileImageView.swift in Sources */,
 				4C1A01291F34DFA30055702F /* PhotosCarouselCollectionCell.swift in Sources */,
 				4CAF91F51F33680D00F2556C /* FriendTableViewCell.swift in Sources */,
+				4C1A01461F358D1D0055702F /* PostsFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

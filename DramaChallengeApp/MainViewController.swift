@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
         UserService.dataUpdatedCallback = {
             self.reloadView()
         }
+        friendsTableView.register(UINib(nibName: "PostsFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: "CustomFooter")
         UserService.loadAllData()
     }
     
@@ -133,6 +134,28 @@ extension MainViewController : UITableViewDataSource {
         case .topPosts: return "Top Friends' Posts"
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard let section = MainPageSections(rawValue: section) else { return 0 }
+        
+        switch section {
+        case .friends: return 0
+        case .topPosts: return 30
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        guard let section = MainPageSections(rawValue: section) else { return nil }
+        
+        switch section {
+        case .friends: return nil
+        case .topPosts:
+            let footerView = friendsTableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooter") as! PostsFooterView
+            footerView.delegate = self
+            return footerView
+        }
+    }
 }
 
 extension MainViewController : FriendCarouselSelectable {
@@ -144,6 +167,12 @@ extension MainViewController : FriendCarouselSelectable {
 extension MainViewController : AbbreviatedPostViewDelegate {
     func didPressMoreButton(post: PostEntity) {
         pushToPostDetailView(post: post)
+    }
+}
+
+extension MainViewController : PostsFooterViewSelectable {
+    func didSelectSeeAll() {
+        print("Presseed See All Footer")
     }
 }
 
