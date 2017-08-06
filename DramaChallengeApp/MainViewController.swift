@@ -8,15 +8,18 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
+import MapKit
 
 class MainViewController: UIViewController {
     
     enum MainPageSections : Int {
         case friends = 0
         case topPosts
+        case topPhotos
         
         static var count : Int {
-            return topPosts.rawValue + 1
+            return topPhotos.rawValue + 1
         }
     }
     
@@ -50,6 +53,8 @@ class MainViewController: UIViewController {
         }
         friendsTableView.register(UINib(nibName: "PostsFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: "CustomFooter")
         UserService.loadAllData()
+        // Location
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,7 +79,7 @@ extension MainViewController : UITableViewDelegate {
         guard let section = MainPageSections.init(rawValue: indexPath.section) else { return }
         
         switch section {
-        case .friends: return
+        case .friends, .topPhotos: return
         case .topPosts:
             
             let post = UserService.top3FriendPosts[indexPath.row]
@@ -93,7 +98,7 @@ extension MainViewController : UITableViewDataSource {
         guard let section = MainPageSections(rawValue: section) else { return 0 }
         
         switch section {
-        case .friends: return 1
+        case .friends, .topPhotos: return 1
         case .topPosts: return UserService.top3FriendPosts.count
         }
     }
@@ -114,6 +119,11 @@ extension MainViewController : UITableViewDataSource {
             
             cell.configureView(with: post, and: self)
             return cell
+        case .topPhotos:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCarouselCellID") as! PhotosCarouselTableCell
+            let photos = UserService.top10FriendPhotos
+            cell.configureCarousel(with: photos, and: self)
+            return cell
         }
     }
     
@@ -123,6 +133,7 @@ extension MainViewController : UITableViewDataSource {
         switch section {
         case .friends: return 132
         case .topPosts: return 137
+        case .topPhotos: return 100
         }
     }
     
@@ -130,8 +141,9 @@ extension MainViewController : UITableViewDataSource {
         guard let section = MainPageSections.init(rawValue: section) else { return nil }
         
         switch section {
-        case .friends: return "Your Friends"
-        case .topPosts: return "Top Friends' Posts"
+        case .friends: return "Friends"
+        case .topPosts: return "Friends' Top Posts"
+        case .topPhotos: return "Friends' Top Photos" // TODO: Change to Your Top Photos
         }
     }
     
@@ -140,19 +152,20 @@ extension MainViewController : UITableViewDataSource {
         
         switch section {
         case .friends: return 0
-        case .topPosts: return 30
+        case .topPosts, .topPhotos: return 30
         }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        guard let section = MainPageSections(rawValue: section) else { return nil }
+        guard let _section = MainPageSections(rawValue: section) else { return nil }
         
-        switch section {
+        switch _section {
         case .friends: return nil
-        case .topPosts:
+        case .topPosts, .topPhotos:
             let footerView = friendsTableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooter") as! PostsFooterView
             footerView.delegate = self
+            footerView.tag = section
             return footerView
         }
     }
@@ -171,8 +184,14 @@ extension MainViewController : AbbreviatedPostViewDelegate {
 }
 
 extension MainViewController : PostsFooterViewSelectable {
-    func didSelectSeeAll() {
-        print("Presseed See All Footer")
+    func didSelectSeeAll(for section: Int) {
+        guard let _section = MainPageSections(rawValue: section) else { return }
+        
+        switch _section {
+        case .friends: break
+        case .topPosts: pushToMapView() // Go to PostsListVC
+        case .topPhotos: pushToMapView() // Go to PhotosListVC
+        }
     }
 }
 
@@ -190,6 +209,21 @@ fileprivate extension MainViewController {
         let friendDashVC = storyboard.instantiateViewController(withIdentifier: MainPageVCIDs.friendDashboard.rawValue) as! FriendDashboardViewController
         friendDashVC.friend = friend
         navigationController?.pushViewController(friendDashVC, animated: true)
+    }
+    
+    func pushToMapView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: "MapVCID") as! MapsViewController
+        mapVC.friendGeoAnnotations = makeFriendGeoAnnotations()
+        navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+    func makeFriendGeoAnnotations() -> [MKAnnotation] {
+        var annotations = [MKAnnotation]()
+        for friend in UserService.users {
+            annotations.append(friend.address)
+        }
+        return annotations
     }
 }
 

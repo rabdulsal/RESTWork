@@ -14,6 +14,6 @@ class DFBasicClearButton : UIButton {
     override open func awakeFromNib() {
         super.awakeFromNib()
         tintColor = UIColor.dramaFeverRed()
-        titleLabel?.font = UIFont.ralewayRegular(14)
+        titleLabel?.font = UIFont.ralewaySemiBold(14)
     }
 }

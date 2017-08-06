@@ -103,6 +103,59 @@
                                             <outlet property="postView" destination="6qR-SY-35T" id="DaH-gl-gNq"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotosCarouselCellID" rowHeight="100" id="8iS-eo-dk9" customClass="PhotosCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="292.5" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8iS-eo-dk9" id="p1U-DV-7AP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-oZ-6jj">
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="83.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O0W-qo-WVT">
+                                                        <size key="itemSize" width="83" height="82"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionCellID" id="qr7-zs-Adt" customClass="PhotosCarouselCollectionCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="1" width="83" height="82"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="83" height="82"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4z-NS-MJl">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="82"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="c4z-NS-MJl" secondAttribute="trailing" id="3np-BF-U1s"/>
+                                                                <constraint firstItem="c4z-NS-MJl" firstAttribute="top" secondItem="qr7-zs-Adt" secondAttribute="top" id="DgX-DQ-LxY"/>
+                                                                <constraint firstItem="c4z-NS-MJl" firstAttribute="leading" secondItem="qr7-zs-Adt" secondAttribute="leading" id="eyx-oL-U3Z"/>
+                                                                <constraint firstAttribute="bottom" secondItem="c4z-NS-MJl" secondAttribute="bottom" id="twI-H4-WAg"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="photoImageView" destination="c4z-NS-MJl" id="WqZ-Mm-i4e"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="mhy-oZ-6jj" secondAttribute="bottom" constant="8" id="1lg-l9-SVf"/>
+                                                <constraint firstItem="mhy-oZ-6jj" firstAttribute="leading" secondItem="p1U-DV-7AP" secondAttribute="leading" id="8rX-Ev-Qxa"/>
+                                                <constraint firstItem="mhy-oZ-6jj" firstAttribute="top" secondItem="p1U-DV-7AP" secondAttribute="top" constant="8" id="O99-Bo-ce1"/>
+                                                <constraint firstAttribute="trailing" secondItem="mhy-oZ-6jj" secondAttribute="trailing" id="Pda-uJ-lJf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="carousel" destination="mhy-oZ-6jj" id="xXf-Ub-R4a"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -294,6 +347,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xw-mK-Yzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293.5999999999999" y="136.28185907046478"/>
+        </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="CFP-7l-ipF">
+            <objects>
+                <viewController storyboardIdentifier="MapVCID" id="6iH-vg-McB" customClass="MapsViewController" customModule="DramaChallengeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GtX-xK-S1h"/>
+                        <viewControllerLayoutGuide type="bottom" id="WpS-I2-Q2j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Hj-o1-Xtb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-wc-R10">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WpS-I2-Q2j" firstAttribute="top" secondItem="XMG-wc-R10" secondAttribute="bottom" id="1gQ-U6-kXO"/>
+                            <constraint firstAttribute="trailing" secondItem="XMG-wc-R10" secondAttribute="trailing" id="HR8-vC-Jee"/>
+                            <constraint firstItem="XMG-wc-R10" firstAttribute="leading" secondItem="7Hj-o1-Xtb" secondAttribute="leading" id="JV7-s2-EUQ"/>
+                            <constraint firstItem="XMG-wc-R10" firstAttribute="top" secondItem="7Hj-o1-Xtb" secondAttribute="top" id="kDf-iE-QJB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="XMG-wc-R10" id="gu4-bg-aMt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUq-vx-mqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1989.5999999999999" y="537.48125937031489"/>
         </scene>
         <!--Post Details View Controller-->
         <scene sceneID="Zpt-FU-amE">

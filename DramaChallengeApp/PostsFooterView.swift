@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PostsFooterViewSelectable {
-    func didSelectSeeAll()
+    func didSelectSeeAll(for section: Int)
 }
 
 class PostsFooterView : UITableViewHeaderFooterView {
@@ -19,11 +19,11 @@ class PostsFooterView : UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.dramaFeverGrey()
+        backgroundColor = UIColor.white
     }
     
     @IBAction func pressedSeeAllButton(_ sender: Any) {
-        delegate?.didSelectSeeAll()
+        delegate?.didSelectSeeAll(for: tag)
     }
     
 }
