@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0E209B1F3787C600E9FB04 /* ComposeCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E209A1F3787C600E9FB04 /* ComposeCommentViewController.swift */; };
 		4C1A01261F34DB300055702F /* PhotosCarouselTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01251F34DB2F0055702F /* PhotosCarouselTableCell.swift */; };
 		4C1A01291F34DFA30055702F /* PhotosCarouselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A01281F34DFA30055702F /* PhotosCarouselCollectionCell.swift */; };
 		4C1A01351F3573A30055702F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A012B1F3573A30055702F /* OFL.txt */; };
@@ -85,6 +86,7 @@
 		318D9E92DE450B8BFEB2889E /* Pods_DramaChallengeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramaChallengeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		374A67EF9D443C584961E900 /* Pods-DramaChallengeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppTests/Pods-DramaChallengeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		393B295B2367180D877304BC /* Pods-DramaChallengeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramaChallengeAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DramaChallengeAppUITests/Pods-DramaChallengeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0E209A1F3787C600E9FB04 /* ComposeCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeCommentViewController.swift; sourceTree = "<group>"; };
 		4C1A01251F34DB2F0055702F /* PhotosCarouselTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCarouselTableCell.swift; sourceTree = "<group>"; };
 		4C1A01281F34DFA30055702F /* PhotosCarouselCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCarouselCollectionCell.swift; sourceTree = "<group>"; };
 		4C1A012B1F3573A30055702F /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OFL.txt; path = "../../../Downloads/matt-mcinerney_raleway/OFL.txt"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				4CAF92061F3381A700F2556C /* PostsListViewController.swift */,
 				4CAF92081F3381BE00F2556C /* PostDetailsViewController.swift */,
+				4C0E209A1F3787C600E9FB04 /* ComposeCommentViewController.swift */,
 			);
 			name = Posts;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				4C9E81E31F31B0D100263DDA /* MainViewController.swift in Sources */,
 				4C9E81E91F31B0D100263DDA /* DramaChallengeApp.xcdatamodeld in Sources */,
 				4CAF91EE1F32A40E00F2556C /* NetworkRequestService.swift in Sources */,
+				4C0E209B1F3787C600E9FB04 /* ComposeCommentViewController.swift in Sources */,
 				4CAF921A1F34034300F2556C /* PostCommentCell.swift in Sources */,
 				4CAF92251F34AAE600F2556C /* UIColor+Extension.swift in Sources */,
 				4CAF92091F3381BE00F2556C /* PostDetailsViewController.swift in Sources */,

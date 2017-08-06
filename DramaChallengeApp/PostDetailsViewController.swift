@@ -20,6 +20,12 @@ class PostDetailsViewController : UIViewController {
         }
     }
     
+    enum Identifiers : String {
+        case postBodyID       = "PostBodyCellID"
+        case commentCellID    = "CommentCellID"
+        case composeCommentID = "CommentComposeIdentifier"
+    }
+    
     @IBOutlet weak var authorImage: FriendProfileImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postBodyLabel: UILabel!
@@ -33,11 +39,9 @@ class PostDetailsViewController : UIViewController {
         }
     }
     
-    
-    
     var post: PostEntity!
     
-    fileprivate var reuseIdentifiers = ["PostBodyCellID","CommentCellID"]
+    fileprivate var replyingComment: CommentEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +52,13 @@ class PostDetailsViewController : UIViewController {
         postAuthorLabel.text = post.author.name
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
+        let composeCommentVC = navVC.viewControllers.first as! ComposeCommentViewController
+        composeCommentVC.delegate = self
+        composeCommentVC.originalComment = replyingComment!
+    }
     
 }
 
@@ -88,30 +99,17 @@ extension PostDetailsViewController : UITableViewDataSource {
         
         switch section {
         case .content:
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifiers[0]) as! PostContentCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.postBodyID.rawValue) as! PostContentCell
             cell.postBodyLabel.text = post.body
             return cell
         case .comments:
             if let comments = post.comments {
-                var cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifiers[1]) as! PostCommentCell
-                
-                switch cell.cellType {
-                case .complete:
-                    let c = cell as! PostCommentCompleteCell
-                    c.delegate = self
-                    c.cellIndexPath = indexPath
-                    let comment = comments[indexPath.row]
-                    if let url = comment.author.avatarThumbURL {
-                        c.commenterImage.imageFromServerURL(urlString: url)
-                    }
-                        c.body.text = comment.body
-                    return c
-                    
-                case .compose:
-                    let c = cell as! ComposeCommentCell
-                    c.cellIndexPath = indexPath
-                    return c
-                }
+                let c = tableView.dequeueReusableCell(withIdentifier: Identifiers.commentCellID.rawValue) as! PostCommentCompleteCell
+                c.delegate = self
+                c.cellIndexPath = indexPath
+                let comment = comments[indexPath.row]
+                c.configureCell(with: comment, and: self)
+                return c
             } else {
                 return UITableViewCell()
             }
@@ -121,15 +119,15 @@ extension PostDetailsViewController : UITableViewDataSource {
 
 extension PostDetailsViewController : PostCommentable {
     
-    func didPressReplyButton(with cellIndexPath: IndexPath) {
+    func didPressReplyButton(for comment: CommentEntity) {
         
-        // Launch CommentComposeVC
-        post.co
-        
-        // Insert Cell at IndexPath
-        commentsTableView.beginUpdates()
-        commentsTableView.insertRows(at: [cellIndexPath], with: .fade)
-        commentsTableView.endUpdates()
-        // Reload Tableview
+        replyingComment = comment
+        performSegue(withIdentifier: Identifiers.composeCommentID.rawValue, sender: nil)
+    }
+}
+
+extension PostDetailsViewController : CommentComposable {
+    func didFinishComposing(comment: CommentEntity) {
+        //
     }
 }

@@ -28,10 +28,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCarouselCellID" rowHeight="100" id="oc1-6d-lvM" customClass="FriendsCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oc1-6d-lvM" id="0kp-WR-1Sx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tEv-N7-YqR">
@@ -81,10 +81,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCellID" rowHeight="137" id="PCB-qh-79w" customClass="AbbreviatedPostCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="137"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCB-qh-79w" id="EGC-ru-Wg2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-SY-35T" customClass="AbbreviatedPostView" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -104,10 +104,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotosCarouselCellID" rowHeight="100" id="8iS-eo-dk9" customClass="PhotosCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="293" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="292.5" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8iS-eo-dk9" id="p1U-DV-7AP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-oZ-6jj">
@@ -196,6 +196,39 @@
             </objects>
             <point key="canvasLocation" x="1301.5999999999999" y="-543.77811094452773"/>
         </scene>
+        <!--Compose Comment View Controller-->
+        <scene sceneID="q7h-AY-JfN">
+            <objects>
+                <viewController id="NuU-Gc-ICJ" customClass="ComposeCommentViewController" customModule="DramaChallengeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yig-nF-mT7"/>
+                        <viewControllerLayoutGuide type="bottom" id="cHb-aY-ug9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hG6-b7-hNg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CTN-Ac-PbS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bnc-Hh-owl">
+                            <connections>
+                                <action selector="pressedCloseButton:" destination="NuU-Gc-ICJ" id="spF-fD-4fV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="T4U-Lu-fzD">
+                            <connections>
+                                <action selector="pressedDoneButton:" destination="NuU-Gc-ICJ" id="HLb-gf-RVF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="donebutton" destination="T4U-Lu-fzD" id="UKK-zq-jR1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgW-91-aVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3607" y="-118"/>
+        </scene>
         <!--Friend Dashboard View Controller-->
         <scene sceneID="CVn-hA-2es">
             <objects>
@@ -255,7 +288,7 @@
                                         <rect key="frame" x="0.0" y="178" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2AH-Mq-mCd" id="Mjh-uZ-417">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-AJ-aon" customClass="AbbreviatedPostView" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -278,7 +311,7 @@
                                         <rect key="frame" x="0.0" y="315" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Brc-Of-1ui" id="VYo-HD-gYt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-qF-9lL">
@@ -448,7 +481,7 @@
                                         <rect key="frame" x="0.0" y="228" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rg9-OR-g6V" id="r3Q-tR-3ez">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-6F-Iy7" userLabel="Post Body" customClass="DFBasicContentLabel" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -469,11 +502,11 @@
                                             <outlet property="postBodyLabel" destination="gd2-6F-Iy7" id="gGI-Bo-uLn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCellID" rowHeight="85" id="3Mq-yG-etl" userLabel="Comment Cell" customClass="PostCommentCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCellID" rowHeight="85" id="3Mq-yG-etl" userLabel="Comment Cell" customClass="PostCommentCompleteCell" customModule="DramaChallengeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="365" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Mq-yG-etl" id="jbH-pO-svZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV1-bp-nd1" customClass="DFCommentContentLabel" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -518,7 +551,7 @@
                                         <rect key="frame" x="0.0" y="450" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yeZ-W4-0Mq" id="p47-ch-c16">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="46j-9R-2N2">
@@ -555,6 +588,7 @@
                         <outlet property="commentsTableView" destination="Xcn-6Q-ld8" id="KdY-bH-e7O"/>
                         <outlet property="postAuthorLabel" destination="xuG-t6-Vfd" id="FDi-qR-sZP"/>
                         <outlet property="postTitleLabel" destination="cpn-7V-2Ss" id="c1y-hI-Ru8"/>
+                        <segue destination="N1z-xD-JTM" kind="presentation" identifier="CommentComposeIdentifier" id="VRG-WJ-RZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsF-gc-LVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,6 +612,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2D-J4-lI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="525.60000000000002" y="-543.77811094452773"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HG2-9M-eYK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1z-xD-JTM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ysc-PF-waK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NuU-Gc-ICJ" kind="relationship" relationship="rootViewController" id="Cj0-WC-zuF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gs-Y7-pDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2858" y="-118"/>
         </scene>
     </scenes>
     <resources>
