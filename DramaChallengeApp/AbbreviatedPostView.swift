@@ -15,7 +15,7 @@ protocol AbbreviatedPostViewDelegate {
 
 class AbbreviatedPostView : UIView {
     
-    @IBOutlet weak var titleLabel: DFSubTitleLabel!
+    @IBOutlet weak var titleLabel: DFSubTitleLabel! 
     @IBOutlet weak var bodyLabel: DFBasicContentLabel!
     @IBOutlet weak var moreButton: DFBasicClearButton!
     

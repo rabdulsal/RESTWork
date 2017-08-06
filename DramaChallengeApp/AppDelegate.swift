@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var locationManager = CLLocationManager()
+    var globalUser: UserEntity?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse { locationManager.requestWhenInUseAuthorization() }
         
+        self.globalUser = UserEntity(id: UserService.baseUserID+1, name: "DramaKing", username: "King of Drama")
         
         return true
     }

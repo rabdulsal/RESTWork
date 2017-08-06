@@ -13,7 +13,6 @@ protocol CommentComposable {
     func didFinishComposing(comment: CommentEntity, indexPath: IndexPath)
 }
 
-
 class ComposeCommentViewController : UIViewController {
     
     @IBOutlet weak var replyToLabel: DFReplyToLabel!
@@ -30,14 +29,14 @@ class ComposeCommentViewController : UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.isTranslucent = false
-        
+        view.backgroundColor = UIColor.dramaFeverGrey()
         replyToLabel.text = "In reply to \(originalComment.author.name)"
         replyTextView.delegate = self
         
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         replyTextView.becomeFirstResponder()
         donebutton.isEnabled = !replyTextView.text.isEmpty
@@ -49,17 +48,18 @@ class ComposeCommentViewController : UIViewController {
     }
     
     @IBAction func pressedDoneButton(_ sender: Any) {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let gUser = appDelegate.globalUser else { return }
         
-        // Construct Comment
         self.composedComment = CommentEntity(
             postId: originalComment.parentPost.id,
-            id: 101,
-            name: "Rashad's Comment",
+            id: PostsService.baseCommentID + 1,
+            name: "\(gUser)'s Comment",
             email: "a@b.com",
-            body: "This is a test updated comment")
-        // Fire Delegate
+            body: replyTextView.text,
+            author: gUser)
         delegate?.didFinishComposing(comment: self.composedComment!, indexPath: self.indexPath)
-        // Close VC
         dismissSelf()
     }
 }

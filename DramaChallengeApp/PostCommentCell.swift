@@ -53,6 +53,11 @@ class PostCommentCell : UITableViewCell {
         case compose
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
     var cellType: CommentCellType = .compose
     var cellIndexPath: IndexPath = IndexPath(row: 0, section: 0)
 }

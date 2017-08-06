@@ -221,7 +221,7 @@ fileprivate extension MainViewController {
     func makeFriendGeoAnnotations() -> [MKAnnotation] {
         var annotations = [MKAnnotation]()
         for friend in UserService.users {
-            annotations.append(friend.address)
+            if let address = friend.address { annotations.append(address) }
         }
         return annotations
     }

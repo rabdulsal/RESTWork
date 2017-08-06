@@ -37,7 +37,7 @@ class UserService {
         return topPhotos
     }
     static var dataUpdatedCallback: (()->Void)?
-    
+    static var baseUserID = 10
     static func loadAllData() {
         self.getUsersRequest { (users) in
             self.users = users

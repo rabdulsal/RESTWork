@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PhotoEntity {
     var albumId: Int
@@ -63,12 +64,8 @@ class CommentEntity {
     var name: String
     var email: String
     var body: String
-    var parentPost: PostEntity {
-        return UserService.posts.filter { $0.id == self.postId }.first!
-    }
-    var author: UserEntity {
-        return UserService.users.filter { $0.id == self.parentPost.author.id }.first!
-    }
+    var parentPost: PostEntity
+    var author: UserEntity
     
     convenience init(commentDict: [String:Any]) {
         let postId = commentDict["postId"] as? Int ?? -1
@@ -76,14 +73,19 @@ class CommentEntity {
         let name = commentDict["title"] as? String ?? ""
         let email = commentDict["email"] as? String ?? ""
         let body = commentDict["body"] as? String ?? ""
-        self.init(postId: postId, id: id, name: name, email: email, body: body)
+        let parentPost = UserService.posts.filter { $0.id == postId }.first!
+        let author = parentPost.author
+        self.init(postId: postId, id: id, name: name, email: email, body: body, author: author)
     }
     
-    init(postId: Int, id: Int, name: String, email: String, body: String) {
+    init(postId: Int, id: Int, name: String, email: String, body: String, author: UserEntity?=nil) {
         self.postId = postId
         self.id     = id
         self.name   = name
         self.email  = email
         self.body   = body
+        self.parentPost = UserService.posts.filter { $0.id == postId }.first!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.author = author ?? appDelegate.globalUser!
     }
 }
