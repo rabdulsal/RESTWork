@@ -28,10 +28,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCarouselCellID" rowHeight="100" id="oc1-6d-lvM" customClass="FriendsCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oc1-6d-lvM" id="0kp-WR-1Sx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tEv-N7-YqR">
@@ -81,10 +81,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCellID" rowHeight="137" id="PCB-qh-79w" customClass="AbbreviatedPostCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="137"/>
+                                        <rect key="frame" x="0.0" y="156" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCB-qh-79w" id="EGC-ru-Wg2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-SY-35T" customClass="AbbreviatedPostView" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -104,10 +104,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotosCarouselCellID" rowHeight="100" id="8iS-eo-dk9" customClass="PhotosCarouselTableCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="292.5" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="293" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8iS-eo-dk9" id="p1U-DV-7AP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-oZ-6jj">
@@ -255,7 +255,7 @@
                                         <rect key="frame" x="0.0" y="178" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2AH-Mq-mCd" id="Mjh-uZ-417">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-AJ-aon" customClass="AbbreviatedPostView" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -278,7 +278,7 @@
                                         <rect key="frame" x="0.0" y="315" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Brc-Of-1ui" id="VYo-HD-gYt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-qF-9lL">
@@ -448,7 +448,7 @@
                                         <rect key="frame" x="0.0" y="228" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rg9-OR-g6V" id="r3Q-tR-3ez">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-6F-Iy7" userLabel="Post Body" customClass="DFBasicContentLabel" customModule="DramaChallengeApp" customModuleProvider="target">
@@ -469,15 +469,15 @@
                                             <outlet property="postBodyLabel" destination="gd2-6F-Iy7" id="gGI-Bo-uLn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCellID" rowHeight="60" id="3Mq-yG-etl" userLabel="Comment Cell" customClass="PostCommentCell" customModule="DramaChallengeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="365" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCellID" rowHeight="85" id="3Mq-yG-etl" userLabel="Comment Cell" customClass="PostCommentCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="365" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Mq-yG-etl" id="jbH-pO-svZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV1-bp-nd1" customClass="DFCommentContentLabel" customModule="DramaChallengeApp" customModuleProvider="target">
-                                                    <rect key="frame" x="62" y="8" width="289" height="43.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV1-bp-nd1" customClass="DFCommentContentLabel" customModule="DramaChallengeApp" customModuleProvider="target">
+                                                    <rect key="frame" x="62" y="8" width="289" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -489,19 +489,54 @@
                                                         <constraint firstAttribute="height" constant="30" id="WzJ-xZ-lu7"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it9-0Z-6li" customClass="DFBasicClearButton" customModule="DramaChallengeApp" customModuleProvider="target">
+                                                    <rect key="frame" x="312" y="36.5" width="39" height="39.5"/>
+                                                    <state key="normal" title="Reply"/>
+                                                    <connections>
+                                                        <action selector="pressedReplyButton:" destination="3Mq-yG-etl" eventType="touchUpInside" id="T2O-bY-6d1"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cxd-YA-1TJ" firstAttribute="top" secondItem="jbH-pO-svZ" secondAttribute="topMargin" id="4a1-gn-xtd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aV1-bp-nd1" secondAttribute="trailing" constant="16" id="6N5-kA-gBJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aV1-bp-nd1" secondAttribute="bottom" id="CuM-wl-7LD"/>
                                                 <constraint firstItem="aV1-bp-nd1" firstAttribute="top" secondItem="cxd-YA-1TJ" secondAttribute="top" id="FUW-Xr-Uza"/>
+                                                <constraint firstItem="it9-0Z-6li" firstAttribute="top" secondItem="aV1-bp-nd1" secondAttribute="bottom" constant="8" id="LtK-Ok-VQ1"/>
                                                 <constraint firstItem="aV1-bp-nd1" firstAttribute="leading" secondItem="cxd-YA-1TJ" secondAttribute="trailing" constant="8" id="UZe-2V-HVG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="it9-0Z-6li" secondAttribute="bottom" constant="0.5" id="eM3-MN-3rS"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="cxd-YA-1TJ" secondAttribute="leading" constant="-16" id="l4Z-y9-42J"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="it9-0Z-6li" secondAttribute="trailing" constant="16" id="vSg-jR-1u0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="body" destination="aV1-bp-nd1" id="Uol-bj-ZXY"/>
+                                            <outlet property="commentReplyButton" destination="it9-0Z-6li" id="93a-Vm-i03"/>
                                             <outlet property="commenterImage" destination="cxd-YA-1TJ" id="FhY-ee-s1P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="yeZ-W4-0Mq" customClass="ComposeCommentCell" customModule="DramaChallengeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="450" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yeZ-W4-0Mq" id="p47-ch-c16">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="46j-9R-2N2">
+                                                    <rect key="frame" x="22" y="0.0" width="331" height="85"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="46j-9R-2N2" firstAttribute="top" secondItem="p47-ch-c16" secondAttribute="topMargin" constant="-8" id="IwR-RW-NNJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="46j-9R-2N2" secondAttribute="trailing" constant="14" id="cSE-cI-VTT"/>
+                                                <constraint firstItem="46j-9R-2N2" firstAttribute="leading" secondItem="p47-ch-c16" secondAttribute="leadingMargin" constant="14" id="t5q-Pe-nmZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="46j-9R-2N2" secondAttribute="bottom" constant="-8.5" id="wWR-0Q-Qc6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="composeTextView" destination="46j-9R-2N2" id="Uy5-0d-F7P"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

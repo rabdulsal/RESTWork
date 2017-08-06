@@ -33,6 +33,8 @@ class PostDetailsViewController : UIViewController {
         }
     }
     
+    
+    
     var post: PostEntity!
     
     fileprivate var reuseIdentifiers = ["PostBodyCellID","CommentCellID"]
@@ -45,6 +47,8 @@ class PostDetailsViewController : UIViewController {
         postTitleLabel.text = post.title.uppercased()
         postAuthorLabel.text = post.author.name
     }
+    
+    
 }
 
 extension PostDetailsViewController : UITableViewDelegate {
@@ -89,16 +93,43 @@ extension PostDetailsViewController : UITableViewDataSource {
             return cell
         case .comments:
             if let comments = post.comments {
-                let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifiers[1]) as! PostCommentCell
-                let comment = comments[indexPath.row]
-                if let url = comment.author.avatarThumbURL {
-                    cell.commenterImage.imageFromServerURL(urlString: url)
+                var cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifiers[1]) as! PostCommentCell
+                
+                switch cell.cellType {
+                case .complete:
+                    let c = cell as! PostCommentCompleteCell
+                    c.delegate = self
+                    c.cellIndexPath = indexPath
+                    let comment = comments[indexPath.row]
+                    if let url = comment.author.avatarThumbURL {
+                        c.commenterImage.imageFromServerURL(urlString: url)
+                    }
+                        c.body.text = comment.body
+                    return c
+                    
+                case .compose:
+                    let c = cell as! ComposeCommentCell
+                    c.cellIndexPath = indexPath
+                    return c
                 }
-                    cell.body.text = comment.body
-                return cell
             } else {
                 return UITableViewCell()
             }
         }
+    }
+}
+
+extension PostDetailsViewController : PostCommentable {
+    
+    func didPressReplyButton(with cellIndexPath: IndexPath) {
+        
+        // Launch CommentComposeVC
+        post.co
+        
+        // Insert Cell at IndexPath
+        commentsTableView.beginUpdates()
+        commentsTableView.insertRows(at: [cellIndexPath], with: .fade)
+        commentsTableView.endUpdates()
+        // Reload Tableview
     }
 }

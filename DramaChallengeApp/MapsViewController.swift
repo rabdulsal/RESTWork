@@ -31,9 +31,7 @@ class MapsViewController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        if let _location = mapView.userLocation.location {
-//            centerMapOnLocation(location: _location)
-//        }
+//        // TODO: Show dropdown encouraging using to pan around globe to see where friends are
     }
 }
 
