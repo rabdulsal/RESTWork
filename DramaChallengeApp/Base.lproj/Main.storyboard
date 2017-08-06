@@ -207,7 +207,31 @@
                     <view key="view" contentMode="scaleToFill" id="hG6-b7-hNg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SOM-8g-UWh">
+                                <rect key="frame" x="16" y="108" width="343" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="YSy-Hj-lYN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtS-L1-2jp" customClass="DFReplyToLabel" customModule="DramaChallengeApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="79" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SOM-8g-UWh" firstAttribute="top" secondItem="dtS-L1-2jp" secondAttribute="bottom" constant="8" id="723-Pt-oY6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SOM-8g-UWh" secondAttribute="trailing" id="JwD-uf-2JQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dtS-L1-2jp" secondAttribute="leading" id="oBD-sd-wK2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SOM-8g-UWh" secondAttribute="leading" id="pd2-Is-BOd"/>
+                            <constraint firstItem="dtS-L1-2jp" firstAttribute="top" secondItem="Yig-nF-mT7" secondAttribute="bottom" constant="15" id="vui-ZI-6Pe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CTN-Ac-PbS">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bnc-Hh-owl">
@@ -223,11 +247,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="donebutton" destination="T4U-Lu-fzD" id="UKK-zq-jR1"/>
+                        <outlet property="replyTextView" destination="SOM-8g-UWh" id="511-Fr-QY9"/>
+                        <outlet property="replyToLabel" destination="dtS-L1-2jp" id="aYq-CR-o8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgW-91-aVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607" y="-118"/>
+            <point key="canvasLocation" x="3605.5999999999999" y="-118.29085457271366"/>
         </scene>
         <!--Friend Dashboard View Controller-->
         <scene sceneID="CVn-hA-2es">
@@ -600,7 +626,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XMZ-wm-CNP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6AG-G5-Kc2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6AG-G5-Kc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -618,7 +644,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1z-xD-JTM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ysc-PF-waK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ysc-PF-waK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

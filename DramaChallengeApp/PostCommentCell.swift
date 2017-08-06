@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PostCommentable {
-    func didPressReplyButton(for comment: CommentEntity)
+    func didPressReplyButton(for comment: CommentEntity, cellIndexPath: IndexPath)
 }
 
 class PostCommentCompleteCell : PostCommentCell {
@@ -27,19 +27,20 @@ class PostCommentCompleteCell : PostCommentCell {
     
     var replyingComment: CommentEntity!
     var delegate: PostCommentable?
-//    var indexPath: IndexPath!
     
     @IBAction func pressedReplyButton(_ sender: Any) {
-        delegate?.didPressReplyButton(for: self.replyingComment)
+        delegate?.didPressReplyButton(for: self.replyingComment, cellIndexPath: self.cellIndexPath)
     }
     
-    func configureCell(with comment: CommentEntity, and delegate: PostCommentable) {
+    func configureCell(with comment: CommentEntity, delegate: PostCommentable, and indexPath: IndexPath) {
         
         if let url = comment.author.avatarThumbURL {
             self.commenterImage.imageFromServerURL(urlString: url)
         }
+        self.delegate = delegate
         self.replyingComment = comment
         self.body.text = comment.body
+        self.cellIndexPath = indexPath
     }
     
 }

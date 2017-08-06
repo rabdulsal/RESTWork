@@ -70,11 +70,20 @@ class CommentEntity {
         return UserService.users.filter { $0.id == self.parentPost.author.id }.first!
     }
     
-    init(commentDict: [String:Any]) {
-        postId = commentDict["postId"] as? Int ?? -1
-        id = commentDict["id"] as? Int ?? -1
-        name = commentDict["title"] as? String ?? ""
-        email = commentDict["email"] as? String ?? ""
-        body = commentDict["body"] as? String ?? ""
+    convenience init(commentDict: [String:Any]) {
+        let postId = commentDict["postId"] as? Int ?? -1
+        let id = commentDict["id"] as? Int ?? -1
+        let name = commentDict["title"] as? String ?? ""
+        let email = commentDict["email"] as? String ?? ""
+        let body = commentDict["body"] as? String ?? ""
+        self.init(postId: postId, id: id, name: name, email: email, body: body)
+    }
+    
+    init(postId: Int, id: Int, name: String, email: String, body: String) {
+        self.postId = postId
+        self.id     = id
+        self.name   = name
+        self.email  = email
+        self.body   = body
     }
 }

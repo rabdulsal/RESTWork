@@ -56,3 +56,12 @@ class DFCommentContentLabel : UILabel {
         font = UIFont.ralewayLight(12)
     }
 }
+
+class DFReplyToLabel : UILabel {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        font = UIFont.ralewayHeavy(12)
+        textColor = UIColor.lightGray
+    }
+}

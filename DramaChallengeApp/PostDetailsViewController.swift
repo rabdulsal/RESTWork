@@ -42,6 +42,7 @@ class PostDetailsViewController : UIViewController {
     var post: PostEntity!
     
     fileprivate var replyingComment: CommentEntity?
+    fileprivate var replyingIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class PostDetailsViewController : UIViewController {
         let composeCommentVC = navVC.viewControllers.first as! ComposeCommentViewController
         composeCommentVC.delegate = self
         composeCommentVC.originalComment = replyingComment!
+        composeCommentVC.indexPath = replyingIndexPath
     }
     
 }
@@ -105,10 +107,8 @@ extension PostDetailsViewController : UITableViewDataSource {
         case .comments:
             if let comments = post.comments {
                 let c = tableView.dequeueReusableCell(withIdentifier: Identifiers.commentCellID.rawValue) as! PostCommentCompleteCell
-                c.delegate = self
-                c.cellIndexPath = indexPath
                 let comment = comments[indexPath.row]
-                c.configureCell(with: comment, and: self)
+                c.configureCell(with: comment, delegate: self, and: indexPath)
                 return c
             } else {
                 return UITableViewCell()
@@ -119,15 +119,20 @@ extension PostDetailsViewController : UITableViewDataSource {
 
 extension PostDetailsViewController : PostCommentable {
     
-    func didPressReplyButton(for comment: CommentEntity) {
-        
+    func didPressReplyButton(for comment: CommentEntity, cellIndexPath: IndexPath) {
+        replyingIndexPath = cellIndexPath
         replyingComment = comment
         performSegue(withIdentifier: Identifiers.composeCommentID.rawValue, sender: nil)
     }
 }
 
 extension PostDetailsViewController : CommentComposable {
-    func didFinishComposing(comment: CommentEntity) {
-        //
+    func didFinishComposing(comment: CommentEntity, indexPath: IndexPath) {
+        let insertRow = indexPath.row + 1
+        self.post.comments?.insert(comment, at: insertRow)
+        
+        commentsTableView.beginUpdates()
+        commentsTableView.insertRows(at: [IndexPath(row: insertRow, section: indexPath.section)], with: .fade)
+        commentsTableView.endUpdates()
     }
 }
