@@ -32,6 +32,7 @@ class ComposeCommentViewController : UIViewController {
         view.backgroundColor = UIColor.dramaFeverGrey()
         replyToLabel.text = "In reply to \(originalComment.author.name)"
         replyTextView.delegate = self
+        replyTextView.layer.cornerRadius = 3.0
         
     }
 
@@ -70,12 +71,5 @@ extension ComposeCommentViewController : UITextViewDelegate {
         if textView.text.isEmpty == false {
             donebutton.isEnabled = true
         }
-    }
-}
-
-fileprivate extension ComposeCommentViewController {
-    
-    func dismissSelf() {
-        dismiss(animated: true, completion: nil)
     }
 }

@@ -27,7 +27,6 @@ class FriendsCarouselTableCell : UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.dramaFeverGrey()
     }
     
     func configureCarousel(with friends: [UserEntity], and delegate: FriendCarouselSelectable) {

@@ -23,16 +23,20 @@ class MainViewController: UIViewController {
         }
     }
     
-    enum MainPageCellIDs : String {
-        case friends = "FriendsCellID"
-        case topPosts = "PostCellID"
+    enum MainPageIdentifiers : String {
+        case friends          = "FriendsCellID"
+        case topPosts         = "PostCellID"
+        case photoDetailSegue = "PhotoDetailSegue"
     }
     
     enum MainPageVCIDs : String {
         case friendDashboard = "FriendDashboardViewControllerID"
         case postDetail = "PostDetailsVCID"
         case allPosts = "AllPostsVCID"
+        case photoDetail = "PhotoDetailID"
     }
+    
+    fileprivate var selectedPhoto: PhotoEntity!
     
     @IBOutlet weak var friendsTableView: UITableView! {
         didSet {
@@ -42,8 +46,6 @@ class MainViewController: UIViewController {
             friendsTableView.rowHeight = UITableViewAutomaticDimension
         }
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +59,11 @@ class MainViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
+        let photoDetailVC = navVC.viewControllers.first as! PhotoDetailViewController
+        photoDetailVC.photo = selectedPhoto
     }
     
     func reloadView() {
@@ -114,7 +112,7 @@ extension MainViewController : UITableViewDataSource {
             cell.configureCarousel(with: friends, and: self)
             return cell
         case .topPosts:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MainPageCellIDs.topPosts.rawValue) as! AbbreviatedPostCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MainPageIdentifiers.topPosts.rawValue) as! AbbreviatedPostCell
             let post = UserService.top3FriendPosts[indexPath.row]
             
             cell.configureView(with: post, and: self)
@@ -192,6 +190,14 @@ extension MainViewController : PostsFooterViewSelectable {
         case .topPosts: pushToMapView() // Go to PostsListVC
         case .topPhotos: pushToMapView() // Go to PhotosListVC
         }
+    }
+}
+
+extension MainViewController : PhotoCarouselSelectable {
+    
+    func selectedPhoto(photo: PhotoEntity) {
+        self.selectedPhoto = photo
+        performSegue(withIdentifier: MainPageIdentifiers.photoDetailSegue.rawValue, sender: nil)
     }
 }
 

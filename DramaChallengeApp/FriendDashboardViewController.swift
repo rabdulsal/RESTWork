@@ -20,9 +20,12 @@ class FriendDashboardViewController : UIViewController {
         }
     }
     
-    enum DashboardCellIDs : String {
-        case friends = "FriendsCellID"
-        case topPosts = "PostCellID"
+    enum DashboardIdentifiers : String {
+        case friends          = "FriendsCellID"
+        case topPosts         = "PostCellID"
+        case photoDetail      = "PhotoDetailSegue"
+        case photosCarouselID = "PhotosCarouselCellID"
+        case postDetailsID    = "PostDetailsVCID"
     }
     
     @IBOutlet weak var profileImageView: FriendProfileImageView!
@@ -41,12 +44,19 @@ class FriendDashboardViewController : UIViewController {
     
     var friend: UserEntity!
     var posts = [PostEntity]()
-    
+    var selectedPhoto: PhotoEntity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = friend.name
         profileImageView.imageFromServerURL(urlString: friend.avatarURL!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
+        let photoDetailVC = navVC.viewControllers.first as! PhotoDetailViewController
+        photoDetailVC.photo = selectedPhoto
     }
     
 }
@@ -86,13 +96,13 @@ extension FriendDashboardViewController : UITableViewDataSource {
         
         switch section {
         case .topPosts:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DashboardCellIDs.topPosts.rawValue) as! AbbreviatedPostCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DashboardIdentifiers.topPosts.rawValue) as! AbbreviatedPostCell
             let post = friend.posts![indexPath.row]
             
             cell.configureView(with: post, and: self)
             return cell
         case .topPhotos:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCarouselCellID") as! PhotosCarouselTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DashboardIdentifiers.photosCarouselID.rawValue) as! PhotosCarouselTableCell
             let photos = self.friend.photos!
             cell.configureCarousel(with: photos, and: self)
             return cell
@@ -112,16 +122,17 @@ extension FriendDashboardViewController : UITableViewDataSource {
 extension FriendDashboardViewController : AbbreviatedPostViewDelegate {
     func didPressMoreButton(post: PostEntity) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let postDetailVC = storyboard.instantiateViewController(withIdentifier: "PostDetailsVCID") as! PostDetailsViewController
+        let postDetailVC = storyboard.instantiateViewController(withIdentifier: DashboardIdentifiers.postDetailsID.rawValue) as! PostDetailsViewController
         postDetailVC.post = post
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
 
-extension FriendDashboardViewController : FriendCarouselSelectable {
+extension FriendDashboardViewController : PhotoCarouselSelectable {
     
-    func didSelectFriend(friend: UserEntity) {
-        //
+    func selectedPhoto(photo: PhotoEntity) {
+        selectedPhoto = photo
+        performSegue(withIdentifier: DashboardIdentifiers.photoDetail.rawValue, sender: nil)
     }
 }
 

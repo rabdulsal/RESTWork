@@ -20,7 +20,7 @@ class AbbreviatedPostCell : UITableViewCell {
     
     func configureView(with post: PostEntity, and delegate: AbbreviatedPostViewDelegate) {
         postView.delegate = delegate
-        postView.titleLabel.text = post.title
+        postView.titleLabel.text = post.title.uppercased()
         postView.bodyLabel.text = post.body
         postView.post = post
     }

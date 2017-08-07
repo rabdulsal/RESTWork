@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol PhotoCarouselSelectable {
+    func selectedPhoto(photo: PhotoEntity)
+}
+
 class PhotosCarouselTableCell : UITableViewCell {
     
     
@@ -20,14 +24,13 @@ class PhotosCarouselTableCell : UITableViewCell {
     }
     
     var photos: [PhotoEntity]!
-    var delegate: FriendCarouselSelectable?
+    var delegate: PhotoCarouselSelectable?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.dramaFeverGrey()
     }
     
-    func configureCarousel(with photos: [PhotoEntity], and delegate: FriendCarouselSelectable) {
+    func configureCarousel(with photos: [PhotoEntity], and delegate: PhotoCarouselSelectable) {
         self.photos = photos
         self.delegate = delegate
         carousel.reloadData()
@@ -38,6 +41,8 @@ extension PhotosCarouselTableCell : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let photo = self.photos[indexPath.row]
+        delegate?.selectedPhoto(photo: photo)
     }
 }
 
