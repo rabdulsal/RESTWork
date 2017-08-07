@@ -26,6 +26,7 @@ class FriendDashboardViewController : UIViewController {
         case photoDetail      = "PhotoDetailSegue"
         case photosCarouselID = "PhotosCarouselCellID"
         case postDetailsID    = "PostDetailsVCID"
+        case mapVCSegue       = "MapVCSegue"
     }
     
     @IBOutlet weak var profileImageView: FriendProfileImageView!
@@ -53,10 +54,28 @@ class FriendDashboardViewController : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as! UINavigationController
-        navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
-        let photoDetailVC = navVC.viewControllers.first as! PhotoDetailViewController
-        photoDetailVC.photo = selectedPhoto
+        
+        guard
+            let identifier = segue.identifier,
+            let _segue = DashboardIdentifiers(rawValue: identifier) else { return }
+        
+        switch _segue {
+        case .photoDetail:
+            let navVC = segue.destination as! UINavigationController
+            navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
+            let photoDetailVC = navVC.viewControllers.first as! PhotoDetailViewController
+            photoDetailVC.photo = selectedPhoto
+        case .mapVCSegue:
+            let navVC = segue.destination as! UINavigationController
+            navVC.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.dramaFeverRed()]
+            let friendMapVC = navVC.viewControllers.first as! MapsViewController
+            friendMapVC.friend = friend
+        default: break
+        }
+    }
+    
+    @IBAction func pressedActionButton(_ sender: Any) {
+        performSegue(withIdentifier: DashboardIdentifiers.mapVCSegue.rawValue, sender: nil)
     }
     
 }

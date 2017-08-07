@@ -13,7 +13,7 @@ class MapsViewController : UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var friendGeoAnnotations = [MKAnnotation]()
+    var friend: UserEntity!
     var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
@@ -25,14 +25,17 @@ class MapsViewController : UIViewController {
         self.mapView.delegate = self
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { mapView.showsUserLocation = true }
         
-        mapView.addAnnotations(friendGeoAnnotations)
+        let location = friend.address!.coordinate
+        let geoSpot = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        centerMapOnLocation(location: geoSpot)
+        mapView.addAnnotations([friend.address!])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        // TODO: Show dropdown encouraging using to pan around globe to see where friends are
+    @IBAction func pressedCloseButton(_ sender: Any) {
+        dismissSelf()
     }
+    
+    
 }
 
 extension MapsViewController : MKMapViewDelegate {
@@ -40,17 +43,18 @@ extension MapsViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? AddressEntity {
             let identifier = "pin"
-            var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                as? MKPinAnnotationView { // 2
+            var view: MKAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
-                // 3
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+                let button = UIButton(type: .detailDisclosure)
+                button.addTarget(self, action: #selector(MapsViewController.makePhoneLabelCallable), for: .touchUpInside)
+                view.rightCalloutAccessoryView = button as UIView
+                view.image = #imageLiteral(resourceName: "df-logo-flame")
             }
             return view
         }
@@ -64,5 +68,13 @@ fileprivate extension MapsViewController {
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @objc func makePhoneLabelCallable() {
+        if let url = URL(string: "telprompt:\(self.friend.phone!)") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
 }

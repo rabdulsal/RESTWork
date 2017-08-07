@@ -150,7 +150,7 @@ extension MainViewController : UITableViewDataSource {
         
         switch section {
         case .friends: return 0
-        case .topPosts, .topPhotos: return 30
+        case .topPosts, .topPhotos: return 0
         }
     }
     
@@ -220,7 +220,7 @@ fileprivate extension MainViewController {
     func pushToMapView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: "MapVCID") as! MapsViewController
-        mapVC.friendGeoAnnotations = makeFriendGeoAnnotations()
+//        mapVC.friend = makeFriendGeoAnnotations()
         navigationController?.pushViewController(mapVC, animated: true)
     }
     
