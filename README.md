@@ -1,10 +1,10 @@
-# DramaChallengeApp #
+# DramaFriendBook #
 
-What does this app do?
+Keep up to date on all your DramaFriends all across the globe.
 
 ### Features ###
 
-* Feature 1
-* Feature 2
-* Feature 3
+* View Friends' profiles & Top photos
+* Read Friends' latest blog posts and leave comments
+* See wherever your DramaFriends are on a map, and call them in 1 tap
 
